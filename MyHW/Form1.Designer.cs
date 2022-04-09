@@ -29,366 +29,410 @@ namespace MyHW
         /// </summary>
         private void InitializeComponent()
         {
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn10 = new System.Windows.Forms.Button();
+            this.btn9 = new System.Windows.Forms.Button();
+            this.btn8 = new System.Windows.Forms.Button();
+            this.btn7 = new System.Windows.Forms.Button();
+            this.btn6 = new System.Windows.Forms.Button();
+            this.btncCear = new System.Windows.Forms.Button();
+            this.btn5 = new System.Windows.Forms.Button();
+            this.btn4 = new System.Windows.Forms.Button();
+            this.btn3 = new System.Windows.Forms.Button();
+            this.btn2 = new System.Windows.Forms.Button();
+            this.labSho = new System.Windows.Forms.Label();
+            this.labRes = new System.Windows.Forms.Label();
+            this.btn1 = new System.Windows.Forms.Button();
             this.txtBox1 = new System.Windows.Forms.TextBox();
             this.labnum = new System.Windows.Forms.Label();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
+            this.btn12 = new System.Windows.Forms.Button();
+            this.btn11 = new System.Windows.Forms.Button();
+            this.btndo = new System.Windows.Forms.Button();
+            this.btnwhi = new System.Windows.Forms.Button();
+            this.btnfor = new System.Windows.Forms.Button();
+            this.labSte = new System.Windows.Forms.Label();
+            this.labTo = new System.Windows.Forms.Label();
+            this.labFrom = new System.Windows.Forms.Label();
+            this.txtBox4 = new System.Windows.Forms.TextBox();
+            this.txtBox3 = new System.Windows.Forms.TextBox();
+            this.txtBox2 = new System.Windows.Forms.TextBox();
+            this.btn13 = new System.Windows.Forms.Button();
+            this.btn15 = new System.Windows.Forms.Button();
+            this.btn14 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button10
+            // btn10
             // 
-            this.button10.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button10.Location = new System.Drawing.Point(586, 47);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(184, 51);
-            this.button10.TabIndex = 34;
-            this.button10.Text = "SUM";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btn10.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn10.Location = new System.Drawing.Point(793, 68);
+            this.btn10.Margin = new System.Windows.Forms.Padding(4);
+            this.btn10.Name = "btn10";
+            this.btn10.Size = new System.Drawing.Size(289, 55);
+            this.btn10.TabIndex = 34;
+            this.btn10.Text = "SUM";
+            this.btn10.UseVisualStyleBackColor = true;
+            this.btn10.Click += new System.EventHandler(this.btn10_Click);
             // 
-            // button11
+            // btn9
             // 
-            this.button11.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button11.Location = new System.Drawing.Point(396, 159);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(184, 51);
-            this.button11.TabIndex = 33;
-            this.button11.Text = "SWAP換位";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btn9.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn9.Location = new System.Drawing.Point(526, 199);
+            this.btn9.Margin = new System.Windows.Forms.Padding(4);
+            this.btn9.Name = "btn9";
+            this.btn9.Size = new System.Drawing.Size(259, 55);
+            this.btn9.TabIndex = 33;
+            this.btn9.Text = "SWAP換位";
+            this.btn9.UseVisualStyleBackColor = true;
+            this.btn9.Click += new System.EventHandler(this.btn9_Click);
             // 
-            // button9
+            // btn8
             // 
-            this.button9.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button9.Location = new System.Drawing.Point(396, 103);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(184, 51);
-            this.button9.TabIndex = 32;
-            this.button9.Text = "二維陣列01交替";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btn8.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn8.Location = new System.Drawing.Point(526, 136);
+            this.btn8.Margin = new System.Windows.Forms.Padding(4);
+            this.btn8.Name = "btn8";
+            this.btn8.Size = new System.Drawing.Size(259, 55);
+            this.btn8.TabIndex = 32;
+            this.btn8.Text = "二維陣列01交替";
+            this.btn8.UseVisualStyleBackColor = true;
+            this.btn8.Click += new System.EventHandler(this.btn8_Click);
             // 
-            // button8
+            // btn7
             // 
-            this.button8.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button8.Location = new System.Drawing.Point(396, 47);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(184, 51);
-            this.button8.TabIndex = 31;
-            this.button8.Text = "二維陣列0包圍1";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn7.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn7.Location = new System.Drawing.Point(526, 68);
+            this.btn7.Margin = new System.Windows.Forms.Padding(4);
+            this.btn7.Name = "btn7";
+            this.btn7.Size = new System.Drawing.Size(259, 55);
+            this.btn7.TabIndex = 31;
+            this.btn7.Text = "二維陣列0包圍1";
+            this.btn7.UseVisualStyleBackColor = true;
+            this.btn7.Click += new System.EventHandler(this.btn7_Click);
             // 
-            // button7
+            // btn6
             // 
-            this.button7.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button7.Location = new System.Drawing.Point(206, 161);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(184, 51);
-            this.button7.TabIndex = 30;
-            this.button7.Text = "二維陣列1包圍0";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btn6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn6.Location = new System.Drawing.Point(259, 199);
+            this.btn6.Margin = new System.Windows.Forms.Padding(4);
+            this.btn6.Name = "btn6";
+            this.btn6.Size = new System.Drawing.Size(259, 55);
+            this.btn6.TabIndex = 30;
+            this.btn6.Text = "二維陣列1包圍0";
+            this.btn6.UseVisualStyleBackColor = true;
+            this.btn6.Click += new System.EventHandler(this.btn6_Click);
             // 
-            // button5
+            // btncCear
             // 
-            this.button5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button5.Location = new System.Drawing.Point(16, 241);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(102, 51);
-            this.button5.TabIndex = 29;
-            this.button5.Text = "清空結果";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btncCear.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btncCear.Location = new System.Drawing.Point(40, 342);
+            this.btncCear.Margin = new System.Windows.Forms.Padding(4);
+            this.btncCear.Name = "btncCear";
+            this.btncCear.Size = new System.Drawing.Size(123, 46);
+            this.btncCear.TabIndex = 29;
+            this.btncCear.Text = "清空結果";
+            this.btncCear.UseVisualStyleBackColor = true;
+            this.btncCear.Click += new System.EventHandler(this.btncCear_Click);
             // 
-            // button6
+            // btn5
             // 
-            this.button6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button6.Location = new System.Drawing.Point(206, 104);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(184, 51);
-            this.button6.TabIndex = 28;
-            this.button6.Text = "陣列中有幾個字包含J";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn5.Location = new System.Drawing.Point(259, 136);
+            this.btn5.Margin = new System.Windows.Forms.Padding(4);
+            this.btn5.Name = "btn5";
+            this.btn5.Size = new System.Drawing.Size(259, 55);
+            this.btn5.TabIndex = 28;
+            this.btn5.Text = "陣列中包含J或j有幾個";
+            this.btn5.UseVisualStyleBackColor = true;
+            this.btn5.Click += new System.EventHandler(this.btn5_Click_1);
             // 
-            // button3
+            // btn4
             // 
-            this.button3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button3.Location = new System.Drawing.Point(206, 47);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(184, 51);
-            this.button3.TabIndex = 27;
-            this.button3.Text = "陣列最長名字";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn4.Location = new System.Drawing.Point(259, 68);
+            this.btn4.Margin = new System.Windows.Forms.Padding(4);
+            this.btn4.Name = "btn4";
+            this.btn4.Size = new System.Drawing.Size(259, 55);
+            this.btn4.TabIndex = 27;
+            this.btn4.Text = "陣列最長名字";
+            this.btn4.UseVisualStyleBackColor = true;
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
-            // button4
+            // btn3
             // 
-            this.button4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button4.Location = new System.Drawing.Point(16, 161);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(184, 51);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "陣列統計奇數偶數";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn3.Location = new System.Drawing.Point(13, 199);
+            this.btn3.Margin = new System.Windows.Forms.Padding(4);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(238, 55);
+            this.btn3.TabIndex = 26;
+            this.btn3.Text = "陣列統計奇數偶數";
+            this.btn3.UseVisualStyleBackColor = true;
+            this.btn3.Click += new System.EventHandler(this.btn3_Click);
             // 
-            // button2
+            // btn2
             // 
-            this.button2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button2.Location = new System.Drawing.Point(16, 104);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(184, 51);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "陣列最大/最小值";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn2.Location = new System.Drawing.Point(13, 136);
+            this.btn2.Margin = new System.Windows.Forms.Padding(4);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(238, 55);
+            this.btn2.TabIndex = 25;
+            this.btn2.Text = "陣列最大/最小值";
+            this.btn2.UseVisualStyleBackColor = true;
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
-            // label2
+            // labSho
             // 
-            this.label2.AutoEllipsis = true;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.label2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(19, 327);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 20);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "結果：";
+            this.labSho.AutoEllipsis = true;
+            this.labSho.AutoSize = true;
+            this.labSho.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.labSho.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labSho.ForeColor = System.Drawing.Color.Navy;
+            this.labSho.Location = new System.Drawing.Point(49, 468);
+            this.labSho.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labSho.Name = "labSho";
+            this.labSho.Size = new System.Drawing.Size(85, 30);
+            this.labSho.TabIndex = 24;
+            this.labSho.Text = "結果：";
             // 
-            // label1
+            // labRes
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(11, 297);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 30);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Result：";
+            this.labRes.AutoSize = true;
+            this.labRes.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labRes.Location = new System.Drawing.Point(32, 404);
+            this.labRes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labRes.Name = "labRes";
+            this.labRes.Size = new System.Drawing.Size(159, 45);
+            this.labRes.TabIndex = 23;
+            this.labRes.Text = "Result：";
             // 
-            // button1
+            // btn1
             // 
-            this.button1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(16, 47);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(184, 51);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "判斷奇數偶數";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn1.Location = new System.Drawing.Point(13, 68);
+            this.btn1.Margin = new System.Windows.Forms.Padding(4);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(238, 55);
+            this.btn1.TabIndex = 22;
+            this.btn1.Text = "判斷奇數偶數";
+            this.btn1.UseVisualStyleBackColor = true;
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
             // txtBox1
             // 
             this.txtBox1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtBox1.Location = new System.Drawing.Point(100, 12);
+            this.txtBox1.Location = new System.Drawing.Point(142, 13);
+            this.txtBox1.Margin = new System.Windows.Forms.Padding(4);
             this.txtBox1.Name = "txtBox1";
-            this.txtBox1.Size = new System.Drawing.Size(100, 29);
+            this.txtBox1.Size = new System.Drawing.Size(136, 39);
             this.txtBox1.TabIndex = 21;
             // 
             // labnum
             // 
             this.labnum.AutoSize = true;
             this.labnum.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labnum.Location = new System.Drawing.Point(12, 15);
+            this.labnum.Location = new System.Drawing.Point(3, 13);
+            this.labnum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labnum.Name = "labnum";
-            this.labnum.Size = new System.Drawing.Size(88, 20);
+            this.labnum.Size = new System.Drawing.Size(131, 30);
             this.labnum.TabIndex = 20;
             this.labnum.Text = "Number：";
             // 
-            // button19
+            // btn12
             // 
-            this.button19.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button19.Location = new System.Drawing.Point(586, 102);
-            this.button19.Margin = new System.Windows.Forms.Padding(2);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(184, 52);
-            this.button19.TabIndex = 106;
-            this.button19.Text = "int[] 樂透 6個號碼不重複";
-            this.button19.UseVisualStyleBackColor = true;
+            this.btn12.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn12.Location = new System.Drawing.Point(792, 199);
+            this.btn12.Name = "btn12";
+            this.btn12.Size = new System.Drawing.Size(290, 55);
+            this.btn12.TabIndex = 106;
+            this.btn12.Text = "int[] 樂透 6個號碼不重複";
+            this.btn12.UseVisualStyleBackColor = true;
+            this.btn12.Click += new System.EventHandler(this.btn12_Click);
             // 
-            // button12
+            // btn11
             // 
-            this.button12.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button12.Location = new System.Drawing.Point(586, 159);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(184, 50);
-            this.button12.TabIndex = 105;
-            this.button12.Text = "Max (params int[] )";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btn11.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn11.Location = new System.Drawing.Point(793, 136);
+            this.btn11.Margin = new System.Windows.Forms.Padding(4);
+            this.btn11.Name = "btn11";
+            this.btn11.Size = new System.Drawing.Size(289, 55);
+            this.btn11.TabIndex = 105;
+            this.btn11.Text = "Max (params int[] )";
+            this.btn11.UseVisualStyleBackColor = true;
+            this.btn11.Click += new System.EventHandler(this.btn11_Click);
             // 
-            // button13
+            // btndo
             // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button13.Location = new System.Drawing.Point(1127, 145);
-            this.button13.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(74, 29);
-            this.button13.TabIndex = 115;
-            this.button13.Text = "do";
-            this.button13.UseVisualStyleBackColor = false;
+            this.btndo.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btndo.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btndo.Location = new System.Drawing.Point(411, 387);
+            this.btndo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btndo.Name = "btndo";
+            this.btndo.Size = new System.Drawing.Size(58, 44);
+            this.btndo.TabIndex = 115;
+            this.btndo.Text = "do";
+            this.btndo.UseVisualStyleBackColor = false;
+            this.btndo.Click += new System.EventHandler(this.btndo_Click);
             // 
-            // button14
+            // btnwhi
             // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button14.Location = new System.Drawing.Point(1127, 108);
-            this.button14.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(74, 29);
-            this.button14.TabIndex = 114;
-            this.button14.Text = "while";
-            this.button14.UseVisualStyleBackColor = false;
+            this.btnwhi.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnwhi.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnwhi.Location = new System.Drawing.Point(411, 334);
+            this.btnwhi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnwhi.Name = "btnwhi";
+            this.btnwhi.Size = new System.Drawing.Size(84, 40);
+            this.btnwhi.TabIndex = 114;
+            this.btnwhi.Text = "while";
+            this.btnwhi.UseVisualStyleBackColor = false;
+            this.btnwhi.Click += new System.EventHandler(this.btnwhi_Click);
             // 
-            // button15
+            // btnfor
             // 
-            this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button15.Location = new System.Drawing.Point(1127, 69);
-            this.button15.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(74, 29);
-            this.button15.TabIndex = 113;
-            this.button15.Text = "for";
-            this.button15.UseVisualStyleBackColor = false;
+            this.btnfor.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnfor.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnfor.Location = new System.Drawing.Point(411, 282);
+            this.btnfor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnfor.Name = "btnfor";
+            this.btnfor.Size = new System.Drawing.Size(58, 44);
+            this.btnfor.TabIndex = 113;
+            this.btnfor.Text = "for";
+            this.btnfor.UseVisualStyleBackColor = false;
+            this.btnfor.Click += new System.EventHandler(this.btnfor_Click);
             // 
-            // label3
+            // labSte
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(972, 148);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 12);
-            this.label3.TabIndex = 112;
-            this.label3.Text = "Step:";
+            this.labSte.AutoSize = true;
+            this.labSte.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.labSte.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labSte.Location = new System.Drawing.Point(266, 393);
+            this.labSte.Name = "labSte";
+            this.labSte.Size = new System.Drawing.Size(71, 30);
+            this.labSte.TabIndex = 112;
+            this.labSte.Text = "Step:";
             // 
-            // label4
+            // labTo
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(983, 108);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 12);
-            this.label4.TabIndex = 111;
-            this.label4.Text = "to:";
+            this.labTo.AutoSize = true;
+            this.labTo.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.labTo.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labTo.Location = new System.Drawing.Point(294, 338);
+            this.labTo.Name = "labTo";
+            this.labTo.Size = new System.Drawing.Size(43, 30);
+            this.labTo.TabIndex = 111;
+            this.labTo.Text = "to:";
             // 
-            // label5
+            // labFrom
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label5.Location = new System.Drawing.Point(974, 74);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 12);
-            this.label5.TabIndex = 110;
-            this.label5.Text = "from:";
+            this.labFrom.AutoSize = true;
+            this.labFrom.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.labFrom.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labFrom.Location = new System.Drawing.Point(264, 289);
+            this.labFrom.Name = "labFrom";
+            this.labFrom.Size = new System.Drawing.Size(73, 30);
+            this.labFrom.TabIndex = 110;
+            this.labFrom.Text = "from:";
             // 
-            // textBox3
+            // txtBox4
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.textBox3.Location = new System.Drawing.Point(1016, 145);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(94, 22);
-            this.textBox3.TabIndex = 109;
+            this.txtBox4.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.txtBox4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtBox4.Location = new System.Drawing.Point(343, 387);
+            this.txtBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBox4.Name = "txtBox4";
+            this.txtBox4.Size = new System.Drawing.Size(62, 39);
+            this.txtBox4.TabIndex = 109;
             // 
-            // textBox2
+            // txtBox3
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.textBox2.Location = new System.Drawing.Point(1016, 107);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(94, 22);
-            this.textBox2.TabIndex = 108;
+            this.txtBox3.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.txtBox3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtBox3.Location = new System.Drawing.Point(343, 334);
+            this.txtBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBox3.Name = "txtBox3";
+            this.txtBox3.Size = new System.Drawing.Size(62, 39);
+            this.txtBox3.TabIndex = 108;
             // 
-            // textBox1
+            // txtBox2
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.textBox1.Location = new System.Drawing.Point(1016, 74);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(94, 22);
-            this.textBox1.TabIndex = 107;
+            this.txtBox2.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.txtBox2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtBox2.Location = new System.Drawing.Point(343, 282);
+            this.txtBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBox2.Name = "txtBox2";
+            this.txtBox2.Size = new System.Drawing.Size(62, 39);
+            this.txtBox2.TabIndex = 107;
             // 
-            // button16
+            // btn13
             // 
-            this.button16.Location = new System.Drawing.Point(775, 47);
-            this.button16.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(184, 51);
-            this.button16.TabIndex = 116;
-            this.button16.Text = "3 個數的最大值";
-            this.button16.UseVisualStyleBackColor = true;
+            this.btn13.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn13.Location = new System.Drawing.Point(526, 272);
+            this.btn13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn13.Name = "btn13";
+            this.btn13.Size = new System.Drawing.Size(259, 54);
+            this.btn13.TabIndex = 116;
+            this.btn13.Text = "3 個數的最大值";
+            this.btn13.UseVisualStyleBackColor = true;
+            this.btn13.Click += new System.EventHandler(this.btn13_Click);
             // 
-            // button17
+            // btn15
             // 
-            this.button17.Location = new System.Drawing.Point(775, 159);
-            this.button17.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(181, 50);
-            this.button17.TabIndex = 118;
-            this.button17.Text = "100 的 二進位是多少 ?";
-            this.button17.UseVisualStyleBackColor = true;
+            this.btn15.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn15.Location = new System.Drawing.Point(803, 272);
+            this.btn15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn15.Name = "btn15";
+            this.btn15.Size = new System.Drawing.Size(279, 54);
+            this.btn15.TabIndex = 118;
+            this.btn15.Text = "100 的 二進位是多少 ?";
+            this.btn15.UseVisualStyleBackColor = true;
+            this.btn15.Click += new System.EventHandler(this.btn15_Click);
             // 
-            // button18
+            // btn14
             // 
-            this.button18.Location = new System.Drawing.Point(775, 103);
-            this.button18.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(181, 51);
-            this.button18.TabIndex = 117;
-            this.button18.Text = "九九乘法表";
-            this.button18.UseVisualStyleBackColor = true;
+            this.btn14.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn14.Location = new System.Drawing.Point(526, 348);
+            this.btn14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn14.Name = "btn14";
+            this.btn14.Size = new System.Drawing.Size(259, 54);
+            this.btn14.TabIndex = 117;
+            this.btn14.Text = "九九乘法表";
+            this.btn14.UseVisualStyleBackColor = true;
+            this.btn14.Click += new System.EventHandler(this.btn14_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1229, 646);
-            this.Controls.Add(this.button17);
-            this.Controls.Add(this.button18);
-            this.Controls.Add(this.button16);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.button14);
-            this.Controls.Add(this.button15);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button19);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1173, 1009);
+            this.Controls.Add(this.btn15);
+            this.Controls.Add(this.btn14);
+            this.Controls.Add(this.btn13);
+            this.Controls.Add(this.btndo);
+            this.Controls.Add(this.btnwhi);
+            this.Controls.Add(this.btnfor);
+            this.Controls.Add(this.labSte);
+            this.Controls.Add(this.labTo);
+            this.Controls.Add(this.labFrom);
+            this.Controls.Add(this.txtBox4);
+            this.Controls.Add(this.txtBox3);
+            this.Controls.Add(this.txtBox2);
+            this.Controls.Add(this.btn12);
+            this.Controls.Add(this.btn11);
+            this.Controls.Add(this.btn10);
+            this.Controls.Add(this.btn9);
+            this.Controls.Add(this.btn8);
+            this.Controls.Add(this.btn7);
+            this.Controls.Add(this.btn6);
+            this.Controls.Add(this.btncCear);
+            this.Controls.Add(this.btn5);
+            this.Controls.Add(this.btn4);
+            this.Controls.Add(this.btn3);
+            this.Controls.Add(this.btn2);
+            this.Controls.Add(this.labSho);
+            this.Controls.Add(this.labRes);
+            this.Controls.Add(this.btn1);
             this.Controls.Add(this.txtBox1);
             this.Controls.Add(this.labnum);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -398,35 +442,35 @@ namespace MyHW
 
         #endregion
 
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn10;
+        private System.Windows.Forms.Button btn9;
+        private System.Windows.Forms.Button btn8;
+        private System.Windows.Forms.Button btn7;
+        private System.Windows.Forms.Button btn6;
+        private System.Windows.Forms.Button btncCear;
+        private System.Windows.Forms.Button btn5;
+        private System.Windows.Forms.Button btn4;
+        private System.Windows.Forms.Button btn3;
+        private System.Windows.Forms.Button btn2;
+        private System.Windows.Forms.Label labSho;
+        private System.Windows.Forms.Label labRes;
+        private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.TextBox txtBox1;
         private System.Windows.Forms.Label labnum;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button btn12;
+        private System.Windows.Forms.Button btn11;
+        private System.Windows.Forms.Button btndo;
+        private System.Windows.Forms.Button btnwhi;
+        private System.Windows.Forms.Button btnfor;
+        private System.Windows.Forms.Label labSte;
+        private System.Windows.Forms.Label labTo;
+        private System.Windows.Forms.Label labFrom;
+        private System.Windows.Forms.TextBox txtBox4;
+        private System.Windows.Forms.TextBox txtBox3;
+        private System.Windows.Forms.TextBox txtBox2;
+        private System.Windows.Forms.Button btn13;
+        private System.Windows.Forms.Button btn15;
+        private System.Windows.Forms.Button btn14;
     }
 }
 
