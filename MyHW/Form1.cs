@@ -248,6 +248,7 @@ namespace MyHW
                     while ( lottery[i]==lottery[j] )
                     {
                         lottery[i] = r.Next(1, 50);
+                        j = 0;
                     }
                 }
                 arr += lottery[i] + "  ";
