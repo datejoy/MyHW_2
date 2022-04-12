@@ -25,7 +25,12 @@ namespace MyHW
             {
                 conn = new SqlConnection("Data Source =.; Initial Catalog = Northwind; Integrated Security = True");
                 conn.Open();
-                SqlCommand command = new SqlCommand("select CategoryName  ",conn);
+                SqlCommand command = new SqlCommand("select CategoryName from Categories ",conn);
+                SqlDataReader datareader = command.ExecuteReader();
+
+                string s = "";
+                comboBox1.Items.Add(s);
+
             }
             catch(Exception ex)
             {
