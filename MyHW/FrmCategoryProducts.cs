@@ -20,8 +20,26 @@ namespace MyHW
 
         void ConnEction()
         {
+            SqlConnection conn = null;
+            try
+            {
+                conn = new SqlConnection("Data Source =.; Initial Catalog = Northwind; Integrated Security = True");
+                conn.Open();
+                SqlCommand command = new SqlCommand("select CategoryName  ",conn);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if( conn != null )
+                {
+                    conn.Close();
+                }
+            }
 
-        }
+         }
 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -29,6 +47,7 @@ namespace MyHW
             string Cname = comboBox1.Text;
             // string a = comboBox.SelectItem.ToString();
             //int a = comboBox1.SelectedIndex;
+
             SqlConnection conn = null;
             try
             {
