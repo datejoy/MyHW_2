@@ -90,42 +90,7 @@ namespace MyHW
 
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string Cname = comboBox1.Text;
-            // string a = comboBox.SelectItem.ToString();
 
-            SqlConnection conn = null;
-            try
-            {
-                conn = new SqlConnection("Data Source =.; Initial Catalog = Northwind; Integrated Security = True");
-                conn.Open();
-
-                SqlCommand command = new SqlCommand($"select ProductName,UnitPrice  from Categories c " +
-                    $"join Products p on p.CategoryID = c.CategoryID where c.CategoryName = '{Cname}'", conn);
-
-                SqlDataReader datareader = command.ExecuteReader();
-                listBox1.Items.Clear();
-                while (datareader.Read())
-                {
-                    string s = $"{datareader["ProductName"],-40}：{datareader["UnitPrice"]:c2}";
-                    listBox1.Items.Add(s);
-                }
-
-                //  MessageBox.Show("success");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                if (conn != null)
-                    conn.Close();
-            }
-
-        }
 
 
 
