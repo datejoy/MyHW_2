@@ -16,6 +16,7 @@ namespace MyHW
         public FrmCategoryProducts()
         {
             InitializeComponent();
+            ConnEction();
         }
 
         void ConnEction()
@@ -28,9 +29,11 @@ namespace MyHW
                 SqlCommand command = new SqlCommand("select CategoryName from Categories ",conn);
                 SqlDataReader datareader = command.ExecuteReader();
 
-                string s = "";
-                comboBox1.Items.Add(s);
-
+                while(datareader.Read())
+                {
+                    string s = datareader["CategoryName"].ToString();
+                    comboBox1.Items.Add(s);
+                }
             }
             catch(Exception ex)
             {
