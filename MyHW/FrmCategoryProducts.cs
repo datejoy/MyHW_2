@@ -73,8 +73,6 @@ namespace MyHW
                     listBox1.Items.Add(s);
                 }
 
-              //  MessageBox.Show("success");
-
             }
             catch (Exception ex)
             {
@@ -90,9 +88,25 @@ namespace MyHW
 
         }
 
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //string s = comboBox1.Text;
+            //SqlConnection conn = new SqlConnection("Data Source =.; Initial Catalog = Northwind; Integrated Security = True");
+            //SqlDataAdapter adapter = new SqlDataAdapter($"select ProductName,UnitPrice from Categories c " +
+            //    $"join Products p on c.CategoryID = p.CategoryID where c.CategoryName = '{s}' ", conn);
+            //DataSet ds = new DataSet();
+            //adapter.Fill(ds);
+            //this.dataGridView1.DataSource = ds.Tables[0];
+        
+        }
 
+        void disconEct()
+        {
+          ////  this.productsTableAdapter1.MyFillByname(this.nwDataSet1.Products, comboBox2.Text);
+          //  this.categoriesTableAdapter1. Fill(this.nwDataSet1.Categories);
 
+          // // this.categoriesTableAdapter1.MYFillBydisn(this.nwDataSet1.Categories, comboBox2.Text);
 
-
+        }
     }
 }
