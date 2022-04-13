@@ -17,6 +17,7 @@ namespace MyHW
         {
             InitializeComponent();
             ConnEction();
+            disconEct();
         }
 
         void ConnEction()
@@ -69,7 +70,7 @@ namespace MyHW
                 listBox1.Items.Clear();
                 while (datareader.Read())
                 {
-                    string s = $"{datareader["ProductName"],-40}：{datareader["UnitPrice"]:c2}";
+                    string s = $"{datareader["ProductName"],-26}：{datareader["UnitPrice"]:c2}";
                     listBox1.Items.Add(s);
                 }
 
@@ -90,22 +91,23 @@ namespace MyHW
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //string s = comboBox1.Text;
-            //SqlConnection conn = new SqlConnection("Data Source =.; Initial Catalog = Northwind; Integrated Security = True");
-            //SqlDataAdapter adapter = new SqlDataAdapter($"select ProductName,UnitPrice from Categories c " +
-            //    $"join Products p on c.CategoryID = p.CategoryID where c.CategoryName = '{s}' ", conn);
-            //DataSet ds = new DataSet();
-            //adapter.Fill(ds);
-            //this.dataGridView1.DataSource = ds.Tables[0];
-        
+            //以CategoryName為條件搜尋
+
         }
 
         void disconEct()
         {
-          ////  this.productsTableAdapter1.MyFillByname(this.nwDataSet1.Products, comboBox2.Text);
-          //  this.categoriesTableAdapter1. Fill(this.nwDataSet1.Categories);
+            //一開始將資料倒入視窗
+            this.categoriesTableAdapter1. Fill(this.nwDataSet1.Categories);
 
-          // // this.categoriesTableAdapter1.MYFillBydisn(this.nwDataSet1.Categories, comboBox2.Text);
+            //將CategoryName連至comboBox
+            for (int i = 0; i < nwDataSet1.Tables["Categories"].Rows.Count; i++)
+            {
+                //↓Categories裡的每個row(橫的)
+                string s = this.nwDataSet1.Categories[i].CategoryName;
+                //↑每個row的種類名(資料行內容)
+                comboBox2.Items.Add(s);
+            }
 
         }
     }
