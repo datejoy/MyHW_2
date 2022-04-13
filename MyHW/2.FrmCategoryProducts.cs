@@ -70,7 +70,7 @@ namespace MyHW
                 listBox1.Items.Clear();
                 while (datareader.Read())
                 {
-                    string s = $"{datareader["ProductName"],-26}：{datareader["UnitPrice"]:c2}";
+                    string s = $"{datareader["ProductName"],-40}：{datareader["UnitPrice"]:c2}";
                     listBox1.Items.Add(s);
                 }
 
@@ -92,7 +92,19 @@ namespace MyHW
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             //以CategoryName為條件搜尋
-
+            this.productsTableAdapter1.FillBydis(this.nwDataSet1.Products, comboBox2.Text);  
+            //把PK拿掉且select所有欄位→建了PK & 選擇所有欄位 才成功
+            
+            DataTable dt = this.nwDataSet1.Tables["Products"];
+            //算每個row(橫)的
+            listBox2.Items.Clear();
+            for ( int i=0 ; i<dt.Rows.Count ; i ++ )
+            {
+                string s = $" { this.nwDataSet1.Products.Rows[i]["ProductName"],-40}：{this.nwDataSet1.Products.Rows[i]["UnitPrice"]:c2}";
+                listBox2.Items.Add(s);
+            }
+            
+           
         }
 
         void disconEct()

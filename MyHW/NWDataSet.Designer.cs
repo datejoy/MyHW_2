@@ -30,7 +30,7 @@ namespace MyHW {
         
         private CustomersDataTable tableCustomers;
         
-        private global::System.Data.DataRelation relationFK_Products_Categories;
+        private global::System.Data.DataRelation relationCategories_Products;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -244,7 +244,7 @@ namespace MyHW {
                     this.tableCustomers.InitVars();
                 }
             }
-            this.relationFK_Products_Categories = this.Relations["FK_Products_Categories"];
+            this.relationCategories_Products = this.Relations["Categories_Products"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -261,10 +261,10 @@ namespace MyHW {
             base.Tables.Add(this.tableCategories);
             this.tableCustomers = new CustomersDataTable();
             base.Tables.Add(this.tableCustomers);
-            this.relationFK_Products_Categories = new global::System.Data.DataRelation("FK_Products_Categories", new global::System.Data.DataColumn[] {
+            this.relationCategories_Products = new global::System.Data.DataRelation("Categories_Products", new global::System.Data.DataColumn[] {
                         this.tableCategories.CategoryIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableProducts.CategoryIDColumn}, false);
-            this.Relations.Add(this.relationFK_Products_Categories);
+            this.Relations.Add(this.relationCategories_Products);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -526,7 +526,7 @@ namespace MyHW {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductsRow AddProductsRow(string ProductName, int SupplierID, CategoriesRow parentCategoriesRowByFK_Products_Categories, string QuantityPerUnit, decimal UnitPrice, short UnitsInStock, short UnitsOnOrder, short ReorderLevel, bool Discontinued) {
+            public ProductsRow AddProductsRow(string ProductName, int SupplierID, CategoriesRow parentCategoriesRowByCategories_Products, string QuantityPerUnit, decimal UnitPrice, short UnitsInStock, short UnitsOnOrder, short ReorderLevel, bool Discontinued) {
                 ProductsRow rowProductsRow = ((ProductsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -539,19 +539,12 @@ namespace MyHW {
                         UnitsOnOrder,
                         ReorderLevel,
                         Discontinued};
-                if ((parentCategoriesRowByFK_Products_Categories != null)) {
-                    columnValuesArray[3] = parentCategoriesRowByFK_Products_Categories[0];
+                if ((parentCategoriesRowByCategories_Products != null)) {
+                    columnValuesArray[3] = parentCategoriesRowByCategories_Products[0];
                 }
                 rowProductsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProductsRow);
                 return rowProductsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductsRow FindByProductID(int ProductID) {
-                return ((ProductsRow)(this.Rows.Find(new object[] {
-                            ProductID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -606,14 +599,11 @@ namespace MyHW {
                 base.Columns.Add(this.columnReorderLevel);
                 this.columnDiscontinued = new global::System.Data.DataColumn("Discontinued", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDiscontinued);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnProductID}, true));
                 this.columnProductID.AutoIncrement = true;
                 this.columnProductID.AutoIncrementSeed = -1;
                 this.columnProductID.AutoIncrementStep = -1;
                 this.columnProductID.AllowDBNull = false;
                 this.columnProductID.ReadOnly = true;
-                this.columnProductID.Unique = true;
                 this.columnProductName.AllowDBNull = false;
                 this.columnProductName.MaxLength = 40;
                 this.columnQuantityPerUnit.MaxLength = 20;
@@ -1624,10 +1614,10 @@ namespace MyHW {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CategoriesRow CategoriesRow {
                 get {
-                    return ((CategoriesRow)(this.GetParentRow(this.Table.ParentRelations["FK_Products_Categories"])));
+                    return ((CategoriesRow)(this.GetParentRow(this.Table.ParentRelations["Categories_Products"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Products_Categories"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["Categories_Products"]);
                 }
             }
             
@@ -1811,11 +1801,11 @@ namespace MyHW {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ProductsRow[] GetProductsRows() {
-                if ((this.Table.ChildRelations["FK_Products_Categories"] == null)) {
+                if ((this.Table.ChildRelations["Categories_Products"] == null)) {
                     return new ProductsRow[0];
                 }
                 else {
-                    return ((ProductsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Products_Categories"])));
+                    return ((ProductsRow[])(base.GetChildRows(this.Table.ChildRelations["Categories_Products"])));
                 }
             }
         }
@@ -2426,7 +2416,7 @@ SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPric
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice" +
@@ -2434,19 +2424,25 @@ SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPric
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice" +
-                ", UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued FROM dbo.Products where" +
-                " UnitPrice between @lowUnitPrice and @highUnitPrice";
+            this._commandCollection[1].CommandText = "SELECT  p.*, c.*\r\nFROM     Products AS p INNER JOIN\r\n               Categories AS" +
+                " c ON p.CategoryID = c.CategoryID\r\nWHERE   (c.CategoryName = @CategoryName)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lowUnitPrice", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@highUnitPrice", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CategoryName", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "CategoryName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice" +
                 ", UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued FROM dbo.Products where" +
-                " ProductName like @ProductName";
+                " UnitPrice between @lowUnitPrice and @highUnitPrice";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProductName", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, "ProductName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lowUnitPrice", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@highUnitPrice", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "UnitPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice" +
+                ", UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued FROM dbo.Products where" +
+                " ProductName like @ProductName";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProductName", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, "ProductName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2477,8 +2473,44 @@ SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPric
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int MyFillBy(NWDataSet.ProductsDataTable dataTable, global::System.Nullable<decimal> lowUnitPrice, global::System.Nullable<decimal> highUnitPrice) {
+        public virtual int FillBydis(NWDataSet.ProductsDataTable dataTable, string CategoryName) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((CategoryName == null)) {
+                throw new global::System.ArgumentNullException("CategoryName");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(CategoryName));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual NWDataSet.ProductsDataTable GetDataBydis(string CategoryName) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((CategoryName == null)) {
+                throw new global::System.ArgumentNullException("CategoryName");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(CategoryName));
+            }
+            NWDataSet.ProductsDataTable dataTable = new NWDataSet.ProductsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int MyFillBy(NWDataSet.ProductsDataTable dataTable, global::System.Nullable<decimal> lowUnitPrice, global::System.Nullable<decimal> highUnitPrice) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((lowUnitPrice.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(lowUnitPrice.Value));
             }
@@ -2503,7 +2535,7 @@ SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPric
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual NWDataSet.ProductsDataTable MyGetDataBy(global::System.Nullable<decimal> lowUnitPrice, global::System.Nullable<decimal> highUnitPrice) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((lowUnitPrice.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(lowUnitPrice.Value));
             }
@@ -2526,7 +2558,7 @@ SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPric
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int MyFillByname(NWDataSet.ProductsDataTable dataTable, string ProductName) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((ProductName == null)) {
                 throw new global::System.ArgumentNullException("ProductName");
             }
@@ -2545,7 +2577,7 @@ SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPric
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual NWDataSet.ProductsDataTable MyGetDataByname(string ProductName) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((ProductName == null)) {
                 throw new global::System.ArgumentNullException("ProductName");
             }
@@ -2895,33 +2927,6 @@ SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPric
                 }
             }
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string ProductName, 
-                    global::System.Nullable<int> SupplierID, 
-                    global::System.Nullable<int> CategoryID, 
-                    string QuantityPerUnit, 
-                    global::System.Nullable<decimal> UnitPrice, 
-                    global::System.Nullable<short> UnitsInStock, 
-                    global::System.Nullable<short> UnitsOnOrder, 
-                    global::System.Nullable<short> ReorderLevel, 
-                    bool Discontinued, 
-                    int Original_ProductID, 
-                    string Original_ProductName, 
-                    global::System.Nullable<int> Original_SupplierID, 
-                    global::System.Nullable<int> Original_CategoryID, 
-                    string Original_QuantityPerUnit, 
-                    global::System.Nullable<decimal> Original_UnitPrice, 
-                    global::System.Nullable<short> Original_UnitsInStock, 
-                    global::System.Nullable<short> Original_UnitsOnOrder, 
-                    global::System.Nullable<short> Original_ReorderLevel, 
-                    bool Original_Discontinued) {
-            return this.Update(ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued, Original_ProductID, Original_ProductName, Original_SupplierID, Original_CategoryID, Original_QuantityPerUnit, Original_UnitPrice, Original_UnitsInStock, Original_UnitsOnOrder, Original_ReorderLevel, Original_Discontinued, Original_ProductID);
-        }
     }
     
     /// <summary>
@@ -3096,8 +3101,8 @@ SELECT CategoryID, CategoryName, Description, Picture FROM Categories WHERE (Cat
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "select p.ProductName,p.UnitPrice from Products p join Categories c on c.CategoryI" +
-                "D = p.CategoryID where c.CategoryName = @CategoryName";
+            this._commandCollection[1].CommandText = "select ProductName,UnitPrice  \r\nfrom Products p\r\njoin   Categories c\r\non p.Catego" +
+                "ryID = c.CategoryID \r\nwhere c.CategoryName = @CategoryName";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CategoryName", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "CategoryName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -3130,7 +3135,7 @@ SELECT CategoryID, CategoryName, Description, Picture FROM Categories WHERE (Cat
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int MYFillBydisn(NWDataSet.CategoriesDataTable dataTable, string CategoryName) {
+        public virtual int disconnFillBy(NWDataSet.CategoriesDataTable dataTable, string CategoryName) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((CategoryName == null)) {
                 throw new global::System.ArgumentNullException("CategoryName");
@@ -3149,7 +3154,7 @@ SELECT CategoryID, CategoryName, Description, Picture FROM Categories WHERE (Cat
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual NWDataSet.CategoriesDataTable MYGetDataBydisn(string CategoryName) {
+        public virtual NWDataSet.CategoriesDataTable disconnGetDataBy(string CategoryName) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((CategoryName == null)) {
                 throw new global::System.ArgumentNullException("CategoryName");
