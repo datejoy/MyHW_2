@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyHW.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -85,26 +86,44 @@ namespace MyHW
                     conn.Close();
             }
 
-
-
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             //以CategoryName為條件搜尋
-            this.productsTableAdapter1.FillBydis(this.nwDataSet1.Products, comboBox2.Text);  
-            //把PK拿掉且select所有欄位→建了PK & 選擇所有欄位 才成功
-            
-            DataTable dt = this.nwDataSet1.Tables["Products"];
-            //算每個row(橫)的
-            listBox2.Items.Clear();
-            for ( int i=0 ; i<dt.Rows.Count ; i ++ )
+            //1.0方法
+            string Cname = comboBox2.Text;
+            SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString);
+            SqlDataAdapter ada = new SqlDataAdapter($"select ProductName,UnitPrice  from Categories c " +
+                    $"join Products p on p.CategoryID = c.CategoryID where c.CategoryName = '{Cname}'",conn);
+            DataSet ds = new DataSet();
+            ada.Fill(ds);
+
+            //將資料加入listbox
+            for( int i=0; i< ds.Tables[0].Rows.Count;i++)//橫的
             {
-                string s = $" { this.nwDataSet1.Products.Rows[i]["ProductName"],-40}：{this.nwDataSet1.Products.Rows[i]["UnitPrice"]:c2}";
+                string s = "";
+                for( int j=0; j<ds.Tables[0].Columns.Count; j++ )//直的
+                {
+                      s += $"{ds.Tables[0].Rows[i][j],-40}";
+                 }
                 listBox2.Items.Add(s);
             }
             
-           
+
+//============================================================================
+            ////2.0
+            //this.productsTableAdapter1.FillBydis(this.nwDataSet1.Products, comboBox2.Text);  
+            ////把PK拿掉且select所有欄位→建了PK & 選擇所有欄位 才成功
+            
+            //DataTable dt = this.nwDataSet1.Tables["Products"];
+            ////算每個row(橫)的
+            //listBox2.Items.Clear();
+            //for ( int i=0 ; i<dt.Rows.Count ; i ++ )
+            //{
+            //    string s = $" { this.nwDataSet1.Products.Rows[i]["ProductName"],-40}：{this.nwDataSet1.Products.Rows[i]["UnitPrice"]:c2}";
+            //    listBox2.Items.Add(s);
+            //}
         }
 
         void disconEct()
@@ -115,9 +134,9 @@ namespace MyHW
             //將CategoryName連至comboBox
             for (int i = 0; i < nwDataSet1.Tables["Categories"].Rows.Count; i++)
             {
-                //↓Categories裡的每個row(橫的)
+                                                                                 //↓Categories裡的每個row(橫的)
                 string s = this.nwDataSet1.Categories[i].CategoryName;
-                //↑每個row的種類名(資料行內容)
+                                                                                          //↑每個row的種類名(資料行內容)
                 comboBox2.Items.Add(s);
             }
 
