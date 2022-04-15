@@ -102,6 +102,12 @@
     <Compile Include="6.FrmMyAlbum_V1.Designer.cs">
       <DependentUpon>6.FrmMyAlbum_V1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMyAlbumTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMyAlbumTool.Designer.cs">
+      <DependentUpon>FrmMyAlbumTool.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="6.FrmMyAlbum_V1.resx">
       <DependentUpon>6.FrmMyAlbum_V1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMyAlbumTool.resx">
+      <DependentUpon>FrmMyAlbumTool.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
