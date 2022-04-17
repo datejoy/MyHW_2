@@ -21,6 +21,7 @@ namespace MyHW
             disconEct();
         }
 
+        //放到combobox
         void ConnEction()
         {
             SqlConnection conn = null;

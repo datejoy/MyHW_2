@@ -102,11 +102,23 @@
     <Compile Include="6.FrmMyAlbum_V1.Designer.cs">
       <DependentUpon>6.FrmMyAlbum_V1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMyAlbumTool.cs">
+    <Compile Include="7.FrmCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMyAlbumTool.Designer.cs">
-      <DependentUpon>FrmMyAlbumTool.cs</DependentUpon>
+    <Compile Include="7.FrmCustomers.Designer.cs">
+      <DependentUpon>7.FrmCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7.FrmLogon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7.FrmLogon.Designer.cs">
+      <DependentUpon>7.FrmLogon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="MyDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -141,8 +153,14 @@
     <EmbeddedResource Include="6.FrmMyAlbum_V1.resx">
       <DependentUpon>6.FrmMyAlbum_V1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMyAlbumTool.resx">
-      <DependentUpon>FrmMyAlbumTool.cs</DependentUpon>
+    <EmbeddedResource Include="7.FrmCustomers.resx">
+      <DependentUpon>7.FrmCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7.FrmLogon.resx">
+      <DependentUpon>7.FrmLogon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -204,8 +222,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="MyDatabase1_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>MyDatabase1.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
