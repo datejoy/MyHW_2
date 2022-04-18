@@ -117,5 +117,10 @@ namespace MyHW
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
