@@ -63,5 +63,15 @@ namespace MyHW.Properties {
                 return ((string)(this["MyDatabase1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=forHomeWork;Integrated Security=True")]
+        public string forHomeWorkConnectionString {
+            get {
+                return ((string)(this["forHomeWorkConnectionString"]));
+            }
+        }
     }
 }

@@ -18,8 +18,62 @@ namespace MyHW
         {
             InitializeComponent();
             BronCity();
+
         }
 
+        //picbox,flowlayoutpanel拖放
+        void mouseEnterDroup()
+        {
+            //picbox
+            this.pictureBox1.AllowDrop = true;
+            this.pictureBox1.DragEnter += PictureBox1_DragEnter;
+            this.pictureBox1.DragDrop += PictureBox1_DragDrop;
+            //layoutpanel
+            this.flowLayoutPanel2.AllowDrop = true;
+            this.flowLayoutPanel2.DragEnter += FlowLayoutPanel2_DragEnter;
+            this.flowLayoutPanel2.DragDrop += FlowLayoutPanel2_DragDrop;
+        }
+
+        private void FlowLayoutPanel2_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            for(int i=0; i<files.Length;i++)
+            {
+                PictureBox picb = new PictureBox(); //動態生成pictureBox
+                picb.Image = Image.FromFile(files[i]);
+                picb.SizeMode = PictureBoxSizeMode.Zoom;
+                picb.Width = 150;
+                picb.Height = 150;
+
+                this.flowLayoutPanel2.Controls.Add(picb);
+                picb.Click += Picb_Click;
+            }
+           
+        }
+
+        private void Picb_Click(object sender, EventArgs e)
+        {
+            Form f = new Form();
+            f.BackgroundImage = ((PictureBox)sender).Image;
+            f.BackgroundImageLayout = ImageLayout.Zoom;
+            f.Show();
+        }
+
+        private void FlowLayoutPanel2_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void PictureBox1_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            this.pictureBox1.Image = Image.FromFile(files[0]);
+        }
+
+        private void PictureBox1_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
 
 
 
@@ -27,13 +81,13 @@ namespace MyHW
         void BronCity()
         {
             //離線
-            this.cityTableTableAdapter1.Fill(this.myDataSet11.CityTable);
+            this.cityTableTableAdapter1.Fill(this.myHWDataSet11.CityTable);
 
-            for (int i = 0; i < this.myDataSet11.CityTable.Rows.Count; i++) //城市數
+            for (int i = 0; i < this.myHWDataSet11.CityTable.Rows.Count; i++) //城市數
             {
                 LinkLabel cityN = new LinkLabel();
-                cityN.Text = this.myDataSet11.CityTable[i].CityName;
-                cityN.Left = 5;
+                cityN.Text = this.myHWDataSet11.CityTable[i].CityName;
+                cityN.Left = 20;
                 cityN.Top = 30 * i;
                 cityN.Tag = i;
 
@@ -41,43 +95,106 @@ namespace MyHW
                 this.splitContainer1.Panel1.Controls.Add(cityN);
             }
 
+            //////連線 
+            //try
+            //{
+            //    using (SqlConnection conn = new SqlConnection(Settings.Default.MyDatabase1ConnectionString))
+            //    {
+            //        conn.Open();
+            //        SqlCommand command = new SqlCommand("select CityName from CityTable", conn);
+            //        SqlDataReader dr = command.ExecuteReader();
 
-            ////連線 
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(Settings.Default.MyDatabase1ConnectionString))
-                {
-                    conn.Open();
-                    SqlCommand command = new SqlCommand("select CityName from CityTable", conn);
-                    SqlDataReader dr = command.ExecuteReader();
 
-
-                    int j = 0;  //
-                    while (dr.Read())
-                    {
-                        string s = $"{dr["CityName"]}";
-                        LinkLabel linl = new LinkLabel();
-                        linl.Text = s;
-                        linl.Left = 5;
-                        linl.Top = 30 + 30 * j;             //30 * this.myDataSet11.CityTable.Rows.Count;←此數為固定，故會重疊
-                        linl.Click += CityN_Click;
-                        linl.Tag = j;
-                        this.splitContainer1.Panel1.Controls.Add(linl);
-                        j++;
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //        int j = 0;  //
+            //        while (dr.Read())
+            //        {
+            //            string s = $"{dr["CityName"]}";
+            //            LinkLabel linl = new LinkLabel();
+            //            linl.Text = s;
+            //            linl.Left = 5;
+            //            linl.Top = 30 + 30 * j;             //30 * this.myDataSet11.CityTable.Rows.Count;←此數為固定，故會重疊
+            //            linl.Click += CityN_Click;
+            //            linl.Tag = j;
+            //            this.splitContainer1.Panel1.Controls.Add(linl);
+            //            j++;
+            //        }
+            //    }
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
             
         }
 
         private void CityN_Click(object sender, EventArgs e)
         {
-            this.cityPicTableTableAdapter1.Fill(this.myDataSet11.CityPicTable);
+            LinkLabel link = sender as LinkLabel;
+            try
+            {
 
+                using(SqlConnection conn = new SqlConnection(Settings.Default.forHomeWorkConnectionString))
+                {
+                    conn.Open();
+                    SqlCommand comm = new SqlCommand();
+                    comm.CommandText = "";
+                    comm.Connection = conn;
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        //page2 瀏覽檔案
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            this.openFileDialog1.Filter = "(*.jpg) | *.jpg | (*.bmp) | *.bmp | All files (*.*)|*.*";
+            if (this.openFileDialog1.ShowDialog()==DialogResult.OK)
+            {
+                this.pictureBox1.Image = Image.FromFile(this.openFileDialog1.FileName);
+            }
+        }
+
+        //Save
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.forHomeWorkConnectionString))
+                {
+                    SqlCommand command = new SqlCommand();
+                    command.CommandText = "Insert into CityPic(CityPhoto) values (@citypho) ";
+                    command.Connection = conn;
+
+                    byte[] bytes;
+
+                    //將圖片轉為二進位
+                    System.IO.MemoryStream ms = new System.IO.MemoryStream();
+
+                    bytes = ms.GetBuffer();
+
+                    command.Parameters.Add("@citypho", SqlDbType.Image).Value = bytes;
+
+
+
+                    conn.Open();
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("加入圖片成功");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

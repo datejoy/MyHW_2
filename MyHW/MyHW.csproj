@@ -114,16 +114,22 @@
     <Compile Include="7.FrmLogon.Designer.cs">
       <DependentUpon>7.FrmLogon.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMain.cs">
+    <Compile Include="01.FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMain.Designer.cs">
-      <DependentUpon>FrmMain.cs</DependentUpon>
+    <Compile Include="01.FrmMain.Designer.cs">
+      <DependentUpon>01.FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyDataSet1.Designer.cs">
+    <Compile Include="FrmImageFlags.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmImageFlags.designer.cs">
+      <DependentUpon>FrmImageFlags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyHWDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MyDataSet1.xsd</DependentUpon>
+      <DependentUpon>MyHWDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="NWDataSet.cs">
       <DependentUpon>NWDataSet.xsd</DependentUpon>
@@ -159,8 +165,11 @@
     <EmbeddedResource Include="7.FrmLogon.resx">
       <DependentUpon>7.FrmLogon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain.resx">
-      <DependentUpon>FrmMain.cs</DependentUpon>
+    <EmbeddedResource Include="01.FrmMain.resx">
+      <DependentUpon>01.FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmImageFlags.resx">
+      <DependentUpon>FrmImageFlags.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -182,16 +191,16 @@
     <None Include="ADDataSet1.xss">
       <DependentUpon>ADDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="MyDataSet1.xsc">
-      <DependentUpon>MyDataSet1.xsd</DependentUpon>
+    <None Include="MyHWDataSet1.xsc">
+      <DependentUpon>MyHWDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="MyDataSet1.xsd">
+    <None Include="MyHWDataSet1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MyDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>MyHWDataSet1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="MyDataSet1.xss">
-      <DependentUpon>MyDataSet1.xsd</DependentUpon>
+    <None Include="MyHWDataSet1.xss">
+      <DependentUpon>MyHWDataSet1.xsd</DependentUpon>
     </None>
     <None Include="NWDataSet.xsc">
       <DependentUpon>NWDataSet.xsd</DependentUpon>
