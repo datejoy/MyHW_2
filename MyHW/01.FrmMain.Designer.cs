@@ -85,7 +85,7 @@ namespace MyHW
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(151, 35);
             this.button7.TabIndex = 7;
-            this.button7.Text = "button7";
+            this.button7.Text = "Quiz";
             this.button7.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -94,7 +94,7 @@ namespace MyHW
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(151, 35);
             this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
+            this.button5.Text = "標準類型";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button6
@@ -103,7 +103,7 @@ namespace MyHW
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(151, 35);
             this.button6.TabIndex = 4;
-            this.button6.Text = "button6";
+            this.button6.Text = "相片管理";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -112,7 +112,7 @@ namespace MyHW
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(151, 35);
             this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
+            this.button3.Text = "ListView";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
@@ -121,7 +121,7 @@ namespace MyHW
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(151, 35);
             this.button4.TabIndex = 2;
-            this.button4.Text = "button4";
+            this.button4.Text = "DataSet 結構";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -130,7 +130,7 @@ namespace MyHW
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(151, 35);
             this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
+            this.button2.Text = "Adventure";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -139,7 +139,7 @@ namespace MyHW
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 35);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Northwind";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmMain

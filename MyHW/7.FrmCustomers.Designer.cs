@@ -43,6 +43,8 @@ namespace MyHW
             this.smallIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detialsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderByToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderAscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderByDescToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupByToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -172,16 +174,33 @@ namespace MyHW
             // 
             // orderByToolStripMenuItem
             // 
+            this.orderByToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.orderAscToolStripMenuItem,
+            this.orderByDescToolStripMenuItem});
             this.orderByToolStripMenuItem.Name = "orderByToolStripMenuItem";
             this.orderByToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.orderByToolStripMenuItem.Text = "Order by";
-            this.orderByToolStripMenuItem.Click += new System.EventHandler(this.orderByToolStripMenuItem_Click);
+            // 
+            // orderAscToolStripMenuItem
+            // 
+            this.orderAscToolStripMenuItem.Name = "orderAscToolStripMenuItem";
+            this.orderAscToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.orderAscToolStripMenuItem.Text = "Order CustomerID Asc";
+            this.orderAscToolStripMenuItem.Click += new System.EventHandler(this.orderAscToolStripMenuItem_Click);
+            // 
+            // orderByDescToolStripMenuItem
+            // 
+            this.orderByDescToolStripMenuItem.Name = "orderByDescToolStripMenuItem";
+            this.orderByDescToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.orderByDescToolStripMenuItem.Text = "Order By CustomerID Desc";
+            this.orderByDescToolStripMenuItem.Click += new System.EventHandler(this.orderByDescToolStripMenuItem_Click);
             // 
             // groupByToolStripMenuItem
             // 
             this.groupByToolStripMenuItem.Name = "groupByToolStripMenuItem";
             this.groupByToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.groupByToolStripMenuItem.Text = "Group by";
+            this.groupByToolStripMenuItem.Click += new System.EventHandler(this.groupByToolStripMenuItem_Click);
             // 
             // FrmCustomers
             // 
@@ -216,5 +235,7 @@ namespace MyHW
         private System.Windows.Forms.ToolStripMenuItem detialsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem orderByToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem groupByToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem orderAscToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem orderByDescToolStripMenuItem;
     }
 }

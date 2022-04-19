@@ -239,7 +239,19 @@ namespace MyHW
             this.listView1.View = View.Details;
         }
 
-        private void orderByToolStripMenuItem_Click(object sender, EventArgs e)
+
+        //按標頭排序...todo
+        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            bool putdown = true;
+            if(putdown)
+            {
+//                listView1.
+            }
+        }
+
+        //order by  CustomerID 升
+        private void orderAscToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -298,14 +310,124 @@ namespace MyHW
             }
         }
 
-        //按標頭排序...todo
-        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        //order by  CustomerID 降
+        private void orderByDescToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bool putdown = true;
-            if(putdown)
+            try
             {
-//                listView1.
+                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                {
+                    conn.Open();
+                    SqlCommand command = new SqlCommand();
+                    command.CommandText = $"Select * from Customers order by CustomerID Desc";
+                    command.Connection = conn;
+                    SqlDataReader dr = command.ExecuteReader();
+
+                    this.listView1.Items.Clear();
+
+                    Random r = new Random();
+
+                    while (dr.Read())
+                    {
+
+                        //主item
+                        ListViewItem lvi = this.listView1.Items.Add(dr[0].ToString());
+
+                        lvi.ImageIndex = r.Next(0, this.ImageList1.Images.Count);
+
+
+                        //子item
+                        for (int i = 1; i < dr.FieldCount; i++)
+                        {
+                            if (dr.IsDBNull(i) == false)
+                            {
+                                lvi.SubItems.Add(dr[i].ToString());
+                            }
+                            else
+                            {
+                                lvi.SubItems.Add("空值");
+                            }
+                        }
+
+                        //變色
+                        if (lvi.Index % 2 == 0)
+                        {
+                            lvi.BackColor = Color.DarkCyan;
+                        }
+                        else
+                        {
+                            lvi.BackColor = Color.Transparent;
+                        }
+
+                    }
+
+                }
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //group by 國家  todo...
+        private void groupByToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        //    try
+        //    {
+        //        using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+        //        {
+        //            conn.Open();
+        //            SqlCommand command = new SqlCommand();
+        //            command.CommandText = $"Select * from Customers group by Country";
+        //            command.Connection = conn;
+        //            SqlDataReader dr = command.ExecuteReader();
+
+        //            this.listView1.Items.Clear();
+
+        //            Random r = new Random();
+
+        //            while (dr.Read())
+        //            {
+
+        //                //主item
+        //                ListViewItem lvi = this.listView1.Items.Add(dr[0].ToString());
+
+        //                lvi.ImageIndex = r.Next(0, this.ImageList1.Images.Count);
+
+
+        //                //子item
+        //                for (int i = 1; i < dr.FieldCount; i++)
+        //                {
+        //                    if (dr.IsDBNull(i) == false)
+        //                    {
+        //                        lvi.SubItems.Add(dr[i].ToString());
+        //                    }
+        //                    else
+        //                    {
+        //                        lvi.SubItems.Add("空值");
+        //                    }
+        //                }
+
+        //                //變色
+        //                if (lvi.Index % 2 == 0)
+        //                {
+        //                    lvi.BackColor = Color.DarkCyan;
+        //                }
+        //                else
+        //                {
+        //                    lvi.BackColor = Color.Transparent;
+        //                }
+
+        //            }
+
+        //        }
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
         }
     }
 

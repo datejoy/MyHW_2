@@ -82,8 +82,39 @@ namespace MyHW
                 picb.Click += Picb_Click;
 
                 //然後儲存  todo...
+                //try
+                //{
+                //    using (SqlConnection conn = new SqlConnection(Settings.Default.forHomeWorkConnectionString))
+                //    {
+                //        SqlCommand command = new SqlCommand();
+                //        command.CommandText = $"Insert into CityPic(CityName, CityPhoto) values (@CityName@citypho) ";
+                //        command.Connection = conn;
+
+                //        byte[] bytes;
+
+                //        //將圖片轉為二進位
+                //        System.IO.MemoryStream ms = new System.IO.MemoryStream();
+
+                //        bytes = ms.GetBuffer();
+
+                //        command.Parameters.Add("@CityName", SqlDbType.NVarChar).Value = comboBox1.Text;
+                //        command.Parameters.Add("@citypho", SqlDbType.Image).Value = bytes;
+                        
+
+
+                //        conn.Open();
+                //        command.ExecuteNonQuery();
+
+                //        MessageBox.Show("加入圖片成功");
+
+                //    }
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.Message);
+                //}
             }
-           
+
         }
 
         private void Picb_Click(object sender, EventArgs e)
@@ -162,6 +193,7 @@ namespace MyHW
 
         }
 
+        //linklabel Click  點擊城市出現Pic
         private void CityN_Click(object sender, EventArgs e)
         {
             LinkLabel link = sender as LinkLabel;

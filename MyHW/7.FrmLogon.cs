@@ -58,8 +58,13 @@ namespace MyHW
                         if(reader.HasRows)
                         {
                             MessageBox.Show("登入成功，您的會員ID為：" + p1.Value);
-                            FrmCustomers fc = new FrmCustomers();
-                            fc.Show();
+                            FrmMain fm = new FrmMain();
+                            //登入視窗藏起
+                            this.Hide();
+                            //強制回應main 如不強制回應主視窗會跑下一行直接關閉
+                            fm.ShowDialog();
+                            //結束執行續
+                            Application.ExitThread();
                         }
                         else
                         {
