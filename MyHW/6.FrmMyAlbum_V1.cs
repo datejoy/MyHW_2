@@ -18,11 +18,12 @@ namespace MyHW
         {
             InitializeComponent();
             BronCity();
-
+            EnterDrouptoPicAndFlo();
+            loadcombox();
         }
 
         //picbox,flowlayoutpanel拖放
-        void mouseEnterDroup()
+        void EnterDrouptoPicAndFlo()
         {
             //picbox
             this.pictureBox1.AllowDrop = true;
@@ -34,8 +35,40 @@ namespace MyHW
             this.flowLayoutPanel2.DragDrop += FlowLayoutPanel2_DragDrop;
         }
 
+        //combobox地區
+        void loadcombox()
+        {
+          
+            try
+            { 
+               
+                using (SqlConnection conn = new SqlConnection(Settings.Default.forHomeWorkConnectionString))
+                {
+                    conn.Open();
+                 
+                    SqlCommand command = new SqlCommand("select CityName from CityTable ", conn);
+
+                    SqlDataReader dataReader = command.ExecuteReader();
+
+                    comboBox1.Items.Clear();
+                    while (dataReader.Read())
+                    {
+                        comboBox1.Items.Add(dataReader["CityName"]);
+
+                    }
+                }        //Auto conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //todo
         private void FlowLayoutPanel2_DragDrop(object sender, DragEventArgs e)
         {
+            //拖圖到flow放掉
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
             for(int i=0; i<files.Length;i++)
             {
@@ -47,6 +80,8 @@ namespace MyHW
 
                 this.flowLayoutPanel2.Controls.Add(picb);
                 picb.Click += Picb_Click;
+
+                //然後儲存  todo...
             }
            
         }
@@ -124,7 +159,7 @@ namespace MyHW
             //{
             //    MessageBox.Show(ex.Message);
             //}
-            
+
         }
 
         private void CityN_Click(object sender, EventArgs e)
@@ -150,51 +185,58 @@ namespace MyHW
 
         }
 
-        //page2 瀏覽檔案
-        private void button1_Click(object sender, EventArgs e)
+        //TOOL
+        private void cityTableBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            this.Validate();
+            this.cityTableBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.myHWDataSet11);
 
+        }
+
+        //Browse...
+        private void button1_Click_1(object sender, EventArgs e)
+        {
             this.openFileDialog1.Filter = "(*.jpg) | *.jpg | (*.bmp) | *.bmp | All files (*.*)|*.*";
-            if (this.openFileDialog1.ShowDialog()==DialogResult.OK)
+            if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 this.pictureBox1.Image = Image.FromFile(this.openFileDialog1.FileName);
             }
         }
 
         //Save
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    using (SqlConnection conn = new SqlConnection(Settings.Default.forHomeWorkConnectionString))
+            //    {
+            //        SqlCommand command = new SqlCommand();
+            //        command.CommandText = "Insert into CityPic(CityPhoto) values (@citypho) ";
+            //        command.Connection = conn;
 
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(Settings.Default.forHomeWorkConnectionString))
-                {
-                    SqlCommand command = new SqlCommand();
-                    command.CommandText = "Insert into CityPic(CityPhoto) values (@citypho) ";
-                    command.Connection = conn;
+            //        byte[] bytes;
 
-                    byte[] bytes;
+            //        //將圖片轉為二進位
+            //        System.IO.MemoryStream ms = new System.IO.MemoryStream();
 
-                    //將圖片轉為二進位
-                    System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            //        bytes = ms.GetBuffer();
 
-                    bytes = ms.GetBuffer();
-
-                    command.Parameters.Add("@citypho", SqlDbType.Image).Value = bytes;
-
+            //        command.Parameters.Add("@citypho", SqlDbType.Image).Value = bytes;
 
 
-                    conn.Open();
-                    command.ExecuteNonQuery();
 
-                    MessageBox.Show("加入圖片成功");
+            //        conn.Open();
+            //        command.ExecuteNonQuery();
 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //        MessageBox.Show("加入圖片成功");
+
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
     }
 }

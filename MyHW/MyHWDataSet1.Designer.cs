@@ -28,7 +28,7 @@ namespace MyHW {
         
         private CityTableDataTable tableCityTable;
         
-        private global::System.Data.DataRelation relationFK_CityPic_CityTable;
+        private global::System.Data.DataRelation relationCityTable_CityPic;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -220,7 +220,7 @@ namespace MyHW {
                     this.tableCityTable.InitVars();
                 }
             }
-            this.relationFK_CityPic_CityTable = this.Relations["FK_CityPic_CityTable"];
+            this.relationCityTable_CityPic = this.Relations["CityTable_CityPic"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -235,10 +235,10 @@ namespace MyHW {
             base.Tables.Add(this.tableCityPic);
             this.tableCityTable = new CityTableDataTable();
             base.Tables.Add(this.tableCityTable);
-            this.relationFK_CityPic_CityTable = new global::System.Data.DataRelation("FK_CityPic_CityTable", new global::System.Data.DataColumn[] {
-                        this.tableCityTable.CityIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCityPic.CityIDColumn}, false);
-            this.Relations.Add(this.relationFK_CityPic_CityTable);
+            this.relationCityTable_CityPic = new global::System.Data.DataRelation("CityTable_CityPic", new global::System.Data.DataColumn[] {
+                        this.tableCityTable.CityNameColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCityPic.CityNameColumn}, false);
+            this.Relations.Add(this.relationCityTable_CityPic);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -321,9 +321,13 @@ namespace MyHW {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class CityPicDataTable : global::System.Data.TypedTableBase<CityPicRow> {
             
-            private global::System.Data.DataColumn columnCityID;
+            private global::System.Data.DataColumn columnPhotoID;
+            
+            private global::System.Data.DataColumn columnCityName;
             
             private global::System.Data.DataColumn columnCityPhoto;
+            
+            private global::System.Data.DataColumn columnDescription;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -360,9 +364,17 @@ namespace MyHW {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CityIDColumn {
+            public global::System.Data.DataColumn PhotoIDColumn {
                 get {
-                    return this.columnCityID;
+                    return this.columnPhotoID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CityNameColumn {
+                get {
+                    return this.columnCityName;
                 }
             }
             
@@ -371,6 +383,14 @@ namespace MyHW {
             public global::System.Data.DataColumn CityPhotoColumn {
                 get {
                     return this.columnCityPhoto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DescriptionColumn {
+                get {
+                    return this.columnDescription;
                 }
             }
             
@@ -411,17 +431,26 @@ namespace MyHW {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CityPicRow AddCityPicRow(CityTableRow parentCityTableRowByFK_CityPic_CityTable, byte[] CityPhoto) {
+            public CityPicRow AddCityPicRow(CityTableRow parentCityTableRowByCityTable_CityPic, byte[] CityPhoto, string Description) {
                 CityPicRow rowCityPicRow = ((CityPicRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        CityPhoto};
-                if ((parentCityTableRowByFK_CityPic_CityTable != null)) {
-                    columnValuesArray[0] = parentCityTableRowByFK_CityPic_CityTable[0];
+                        null,
+                        CityPhoto,
+                        Description};
+                if ((parentCityTableRowByCityTable_CityPic != null)) {
+                    columnValuesArray[1] = parentCityTableRowByCityTable_CityPic[1];
                 }
                 rowCityPicRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCityPicRow);
                 return rowCityPicRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CityPicRow FindByPhotoID(int PhotoID) {
+                return ((CityPicRow)(this.Rows.Find(new object[] {
+                            PhotoID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -441,19 +470,36 @@ namespace MyHW {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnCityID = base.Columns["CityID"];
+                this.columnPhotoID = base.Columns["PhotoID"];
+                this.columnCityName = base.Columns["CityName"];
                 this.columnCityPhoto = base.Columns["CityPhoto"];
+                this.columnDescription = base.Columns["Description"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnCityID = new global::System.Data.DataColumn("CityID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCityID);
+                this.columnPhotoID = new global::System.Data.DataColumn("PhotoID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPhotoID);
+                this.columnCityName = new global::System.Data.DataColumn("CityName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCityName);
                 this.columnCityPhoto = new global::System.Data.DataColumn("CityPhoto", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCityPhoto);
-                this.columnCityID.AllowDBNull = false;
+                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescription);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnPhotoID}, true));
+                this.columnPhotoID.AutoIncrement = true;
+                this.columnPhotoID.AutoIncrementSeed = -1;
+                this.columnPhotoID.AutoIncrementStep = -1;
+                this.columnPhotoID.AllowDBNull = false;
+                this.columnPhotoID.ReadOnly = true;
+                this.columnPhotoID.Unique = true;
+                this.columnCityName.AllowDBNull = false;
+                this.columnCityName.MaxLength = 20;
                 this.columnCityPhoto.AllowDBNull = false;
+                this.columnDescription.AllowDBNull = false;
+                this.columnDescription.MaxLength = 1073741823;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -700,9 +746,9 @@ namespace MyHW {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CityTableRow FindByCityID(int CityID) {
+            public CityTableRow FindByCityName(string CityName) {
                 return ((CityTableRow)(this.Rows.Find(new object[] {
-                            CityID})));
+                            CityName})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -737,13 +783,14 @@ namespace MyHW {
                 this.columnDiscription = new global::System.Data.DataColumn("Discription", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDiscription);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnCityID}, true));
+                                this.columnCityName}, true));
                 this.columnCityID.AutoIncrement = true;
                 this.columnCityID.AutoIncrementSeed = -1;
                 this.columnCityID.AutoIncrementStep = -1;
                 this.columnCityID.AllowDBNull = false;
                 this.columnCityID.ReadOnly = true;
-                this.columnCityID.Unique = true;
+                this.columnCityName.AllowDBNull = false;
+                this.columnCityName.Unique = true;
                 this.columnCityName.MaxLength = 20;
                 this.columnDiscription.MaxLength = 1073741823;
             }
@@ -888,12 +935,23 @@ namespace MyHW {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int CityID {
+            public int PhotoID {
                 get {
-                    return ((int)(this[this.tableCityPic.CityIDColumn]));
+                    return ((int)(this[this.tableCityPic.PhotoIDColumn]));
                 }
                 set {
-                    this[this.tableCityPic.CityIDColumn] = value;
+                    this[this.tableCityPic.PhotoIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CityName {
+                get {
+                    return ((string)(this[this.tableCityPic.CityNameColumn]));
+                }
+                set {
+                    this[this.tableCityPic.CityNameColumn] = value;
                 }
             }
             
@@ -910,12 +968,23 @@ namespace MyHW {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CityTableRow CityTableRow {
+            public string Description {
                 get {
-                    return ((CityTableRow)(this.GetParentRow(this.Table.ParentRelations["FK_CityPic_CityTable"])));
+                    return ((string)(this[this.tableCityPic.DescriptionColumn]));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_CityPic_CityTable"]);
+                    this[this.tableCityPic.DescriptionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CityTableRow CityTableRow {
+                get {
+                    return ((CityTableRow)(this.GetParentRow(this.Table.ParentRelations["CityTable_CityPic"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["CityTable_CityPic"]);
                 }
             }
         }
@@ -949,12 +1018,7 @@ namespace MyHW {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string CityName {
                 get {
-                    try {
-                        return ((string)(this[this.tableCityTable.CityNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'CityTable\' 中資料行 \'CityName\' 的值是 DBNull。", e);
-                    }
+                    return ((string)(this[this.tableCityTable.CityNameColumn]));
                 }
                 set {
                     this[this.tableCityTable.CityNameColumn] = value;
@@ -979,18 +1043,6 @@ namespace MyHW {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCityNameNull() {
-                return this.IsNull(this.tableCityTable.CityNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCityNameNull() {
-                this[this.tableCityTable.CityNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDiscriptionNull() {
                 return this.IsNull(this.tableCityTable.DiscriptionColumn);
             }
@@ -1004,11 +1056,11 @@ namespace MyHW {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CityPicRow[] GetCityPicRows() {
-                if ((this.Table.ChildRelations["FK_CityPic_CityTable"] == null)) {
+                if ((this.Table.ChildRelations["CityTable_CityPic"] == null)) {
                     return new CityPicRow[0];
                 }
                 else {
-                    return ((CityPicRow[])(base.GetChildRows(this.Table.ChildRelations["FK_CityPic_CityTable"])));
+                    return ((CityPicRow[])(base.GetChildRows(this.Table.ChildRelations["CityTable_CityPic"])));
                 }
             }
         }
@@ -1206,15 +1258,38 @@ namespace MyHW.MyHWDataSet1TableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "CityPic";
-            tableMapping.ColumnMappings.Add("CityID", "CityID");
+            tableMapping.ColumnMappings.Add("PhotoID", "PhotoID");
+            tableMapping.ColumnMappings.Add("CityName", "CityName");
             tableMapping.ColumnMappings.Add("CityPhoto", "CityPhoto");
+            tableMapping.ColumnMappings.Add("Description", "Description");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[CityPic] WHERE (([PhotoID] = @Original_PhotoID) AND ([CityName" +
+                "] = @Original_CityName))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PhotoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhotoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CityName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[CityPic] ([CityID], [CityPhoto]) VALUES (@CityID, @CityPhoto)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[CityPic] ([CityName], [CityPhoto], [Description]) VALUES (@Cit" +
+                "yName, @CityPhoto, @Description);\r\nSELECT PhotoID, CityName, CityPhoto, Descript" +
+                "ion FROM CityPic WHERE (PhotoID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CityID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CityName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CityPhoto", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityPhoto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NText, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[CityPic] SET [CityName] = @CityName, [CityPhoto] = @CityPhoto, [Description] = @Description WHERE (([PhotoID] = @Original_PhotoID) AND ([CityName] = @Original_CityName));
+SELECT PhotoID, CityName, CityPhoto, Description FROM CityPic WHERE (PhotoID = @PhotoID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CityName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CityPhoto", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityPhoto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.NText, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PhotoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhotoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CityName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CityName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PhotoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PhotoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1230,7 +1305,7 @@ namespace MyHW.MyHWDataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT CityID, CityPhoto FROM dbo.CityPic";
+            this._commandCollection[0].CommandText = "SELECT PhotoID, CityName, CityPhoto, Description FROM dbo.CityPic";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1290,14 +1365,53 @@ namespace MyHW.MyHWDataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_PhotoID, string Original_CityName) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PhotoID));
+            if ((Original_CityName == null)) {
+                throw new global::System.ArgumentNullException("Original_CityName");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_CityName));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int CityID, byte[] CityPhoto) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(CityID));
+        public virtual int Insert(string CityName, byte[] CityPhoto, string Description) {
+            if ((CityName == null)) {
+                throw new global::System.ArgumentNullException("CityName");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(CityName));
+            }
             if ((CityPhoto == null)) {
                 throw new global::System.ArgumentNullException("CityPhoto");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((byte[])(CityPhoto));
+            }
+            if ((Description == null)) {
+                throw new global::System.ArgumentNullException("Description");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Description));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1313,6 +1427,61 @@ namespace MyHW.MyHWDataSet1TableAdapters {
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string CityName, byte[] CityPhoto, string Description, int Original_PhotoID, string Original_CityName, int PhotoID) {
+            if ((CityName == null)) {
+                throw new global::System.ArgumentNullException("CityName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(CityName));
+            }
+            if ((CityPhoto == null)) {
+                throw new global::System.ArgumentNullException("CityPhoto");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((byte[])(CityPhoto));
+            }
+            if ((Description == null)) {
+                throw new global::System.ArgumentNullException("Description");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Description));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_PhotoID));
+            if ((Original_CityName == null)) {
+                throw new global::System.ArgumentNullException("Original_CityName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_CityName));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(PhotoID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string CityName, byte[] CityPhoto, string Description, int Original_PhotoID, string Original_CityName) {
+            return this.Update(CityName, CityPhoto, Description, Original_PhotoID, Original_CityName, Original_PhotoID);
         }
     }
     
@@ -1547,8 +1716,7 @@ SELECT CityID, CityName, Discription FROM CityTable WHERE (CityID = @CityID)";
         public virtual int Delete(int Original_CityID, string Original_CityName) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_CityID));
             if ((Original_CityName == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_CityName");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -1576,7 +1744,7 @@ SELECT CityID, CityName, Discription FROM CityTable WHERE (CityID = @CityID)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(string CityName, string Discription) {
             if ((CityName == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("CityName");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(CityName));
@@ -1609,7 +1777,7 @@ SELECT CityID, CityName, Discription FROM CityTable WHERE (CityID = @CityID)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string CityName, string Discription, int Original_CityID, string Original_CityName, int CityID) {
             if ((CityName == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("CityName");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(CityName));
@@ -1622,8 +1790,7 @@ SELECT CityID, CityName, Discription FROM CityTable WHERE (CityID = @CityID)";
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_CityID));
             if ((Original_CityName == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_CityName");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
@@ -1650,8 +1817,8 @@ SELECT CityID, CityName, Discription FROM CityTable WHERE (CityID = @CityID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string CityName, string Discription, int Original_CityID, string Original_CityName) {
-            return this.Update(CityName, Discription, Original_CityID, Original_CityName, Original_CityID);
+        public virtual int Update(string Discription, int Original_CityID, string Original_CityName, int CityID) {
+            return this.Update(Original_CityName, Discription, Original_CityID, Original_CityName, CityID);
         }
     }
     

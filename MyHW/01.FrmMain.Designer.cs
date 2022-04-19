@@ -31,13 +31,13 @@ namespace MyHW
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -79,45 +79,18 @@ namespace MyHW
             this.splitContainer2.SplitterDistance = 197;
             this.splitContainer2.TabIndex = 0;
             // 
-            // button1
+            // button7
             // 
-            this.button1.Location = new System.Drawing.Point(27, 60);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(27, 112);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(151, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(27, 215);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(151, 35);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(27, 163);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(151, 35);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button7.Location = new System.Drawing.Point(23, 326);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(151, 35);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "button7";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(27, 319);
+            this.button5.Location = new System.Drawing.Point(23, 275);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(151, 35);
             this.button5.TabIndex = 5;
@@ -126,21 +99,48 @@ namespace MyHW
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(27, 267);
+            this.button6.Location = new System.Drawing.Point(23, 223);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(151, 35);
             this.button6.TabIndex = 4;
             this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // button3
             // 
-            this.button7.Location = new System.Drawing.Point(27, 370);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(151, 35);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(23, 171);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(151, 35);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(23, 119);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(151, 35);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(23, 68);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(151, 35);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(23, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(151, 35);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmMain
             // 
@@ -148,7 +148,7 @@ namespace MyHW
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 629);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmMain";
             this.Text = "FrmMain";
             this.splitContainer1.Panel2.ResumeLayout(false);

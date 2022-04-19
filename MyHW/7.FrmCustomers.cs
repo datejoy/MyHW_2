@@ -21,6 +21,7 @@ namespace MyHW
             PutColumnName();
         }
 
+        
 
         //↓combox裡加入國家 北風DB
         void LoadCountry()
@@ -294,6 +295,16 @@ namespace MyHW
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        //按標頭排序...todo
+        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            bool putdown = true;
+            if(putdown)
+            {
+//                listView1.
             }
         }
     }

@@ -34,8 +34,8 @@ namespace MyHW
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.ImageList1 = new System.Windows.Forms.ImageList(this.components);
             this.ImageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.ImageList1 = new System.Windows.Forms.ImageList(this.components);
             this.nwDataSet1 = new MyHW.NWDataSet();
             this.customersTableAdapter1 = new MyHW.NWDataSetTableAdapters.CustomersTableAdapter();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -61,7 +61,7 @@ namespace MyHW
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(132, 54);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(145, 20);
             this.comboBox1.TabIndex = 7;
@@ -72,37 +72,14 @@ namespace MyHW
             this.listView1.HideSelection = false;
             this.listView1.LargeImageList = this.ImageList2;
             this.listView1.Location = new System.Drawing.Point(38, 119);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(631, 293);
             this.listView1.SmallImageList = this.ImageList1;
             this.listView1.TabIndex = 9;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // ImageList1
-            // 
-            this.ImageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList1.ImageStream")));
-            this.ImageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ImageList1.Images.SetKeyName(0, "FLGGERM.ICO");
-            this.ImageList1.Images.SetKeyName(1, "CTRCAN.ICO");
-            this.ImageList1.Images.SetKeyName(2, "CTRFRAN.ICO");
-            this.ImageList1.Images.SetKeyName(3, "CTRGERM.ICO");
-            this.ImageList1.Images.SetKeyName(4, "CTRITALY.ICO");
-            this.ImageList1.Images.SetKeyName(5, "CTRJAPAN.ICO");
-            this.ImageList1.Images.SetKeyName(6, "CTRMEX.ICO");
-            this.ImageList1.Images.SetKeyName(7, "CTRSKOR.ICO");
-            this.ImageList1.Images.SetKeyName(8, "CTRSPAIN.ICO");
-            this.ImageList1.Images.SetKeyName(9, "CTRUK.ICO");
-            this.ImageList1.Images.SetKeyName(10, "CTRUSA.ICO");
-            this.ImageList1.Images.SetKeyName(11, "FLGASTRL.ICO");
-            this.ImageList1.Images.SetKeyName(12, "FLGAUSTA.ICO");
-            this.ImageList1.Images.SetKeyName(13, "FLGBELG.ICO");
-            this.ImageList1.Images.SetKeyName(14, "FLGBRAZL.ICO");
-            this.ImageList1.Images.SetKeyName(15, "FLGCAN.ICO");
-            this.ImageList1.Images.SetKeyName(16, "FLGDEN.ICO");
-            this.ImageList1.Images.SetKeyName(17, "FLGFIN.ICO");
-            this.ImageList1.Images.SetKeyName(18, "FLGFRAN.ICO");
+            this.listView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
             // 
             // ImageList2
             // 
@@ -128,6 +105,30 @@ namespace MyHW
             this.ImageList2.Images.SetKeyName(17, "FLGFIN.ICO");
             this.ImageList2.Images.SetKeyName(18, "FLGFRAN.ICO");
             // 
+            // ImageList1
+            // 
+            this.ImageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList1.ImageStream")));
+            this.ImageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList1.Images.SetKeyName(0, "FLGGERM.ICO");
+            this.ImageList1.Images.SetKeyName(1, "CTRCAN.ICO");
+            this.ImageList1.Images.SetKeyName(2, "CTRFRAN.ICO");
+            this.ImageList1.Images.SetKeyName(3, "CTRGERM.ICO");
+            this.ImageList1.Images.SetKeyName(4, "CTRITALY.ICO");
+            this.ImageList1.Images.SetKeyName(5, "CTRJAPAN.ICO");
+            this.ImageList1.Images.SetKeyName(6, "CTRMEX.ICO");
+            this.ImageList1.Images.SetKeyName(7, "CTRSKOR.ICO");
+            this.ImageList1.Images.SetKeyName(8, "CTRSPAIN.ICO");
+            this.ImageList1.Images.SetKeyName(9, "CTRUK.ICO");
+            this.ImageList1.Images.SetKeyName(10, "CTRUSA.ICO");
+            this.ImageList1.Images.SetKeyName(11, "FLGASTRL.ICO");
+            this.ImageList1.Images.SetKeyName(12, "FLGAUSTA.ICO");
+            this.ImageList1.Images.SetKeyName(13, "FLGBELG.ICO");
+            this.ImageList1.Images.SetKeyName(14, "FLGBRAZL.ICO");
+            this.ImageList1.Images.SetKeyName(15, "FLGCAN.ICO");
+            this.ImageList1.Images.SetKeyName(16, "FLGDEN.ICO");
+            this.ImageList1.Images.SetKeyName(17, "FLGFIN.ICO");
+            this.ImageList1.Images.SetKeyName(18, "FLGFRAN.ICO");
+            // 
             // nwDataSet1
             // 
             this.nwDataSet1.DataSetName = "NWDataSet";
@@ -151,21 +152,21 @@ namespace MyHW
             // largIconToolStripMenuItem
             // 
             this.largIconToolStripMenuItem.Name = "largIconToolStripMenuItem";
-            this.largIconToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.largIconToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.largIconToolStripMenuItem.Text = "LargIcon";
             this.largIconToolStripMenuItem.Click += new System.EventHandler(this.largIconToolStripMenuItem_Click);
             // 
             // smallIconToolStripMenuItem
             // 
             this.smallIconToolStripMenuItem.Name = "smallIconToolStripMenuItem";
-            this.smallIconToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.smallIconToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.smallIconToolStripMenuItem.Text = "SmallIcon";
             this.smallIconToolStripMenuItem.Click += new System.EventHandler(this.smallIconToolStripMenuItem_Click);
             // 
             // detialsToolStripMenuItem
             // 
             this.detialsToolStripMenuItem.Name = "detialsToolStripMenuItem";
-            this.detialsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.detialsToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.detialsToolStripMenuItem.Text = "Detials";
             this.detialsToolStripMenuItem.Click += new System.EventHandler(this.detialsToolStripMenuItem_Click);
             // 
@@ -179,7 +180,7 @@ namespace MyHW
             // groupByToolStripMenuItem
             // 
             this.groupByToolStripMenuItem.Name = "groupByToolStripMenuItem";
-            this.groupByToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.groupByToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.groupByToolStripMenuItem.Text = "Group by";
             // 
             // FrmCustomers
@@ -191,7 +192,7 @@ namespace MyHW
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCustomers";
             this.Text = "FrmCustomers";
             ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).EndInit();
