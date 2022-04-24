@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -48,7 +48,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -96,12 +99,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ADDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="6.FrmMyAlbum_V1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="6.FrmMyAlbum_V1.Designer.cs">
-      <DependentUpon>6.FrmMyAlbum_V1.cs</DependentUpon>
-    </Compile>
     <Compile Include="7.FrmCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,11 +111,11 @@
     <Compile Include="7.FrmLogon.Designer.cs">
       <DependentUpon>7.FrmLogon.cs</DependentUpon>
     </Compile>
-    <Compile Include="01.FrmMain.cs">
+    <Compile Include="01.FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="01.FrmMain.Designer.cs">
-      <DependentUpon>01.FrmMain.cs</DependentUpon>
+    <Compile Include="01.FormMain.Designer.cs">
+      <DependentUpon>01.FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmImageFlags.cs">
       <SubType>Form</SubType>
@@ -126,16 +123,22 @@
     <Compile Include="FrmImageFlags.designer.cs">
       <DependentUpon>FrmImageFlags.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTreeView.cs">
+    <Compile Include="8.FrmTreeView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTreeView.Designer.cs">
-      <DependentUpon>FrmTreeView.cs</DependentUpon>
+    <Compile Include="8.FrmTreeView.Designer.cs">
+      <DependentUpon>8.FrmTreeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyHWDataSet1.Designer.cs">
+    <Compile Include="6.FrmMyAlbum2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.FrmMyAlbum2.Designer.cs">
+      <DependentUpon>6.FrmMyAlbum2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyAlbumDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MyHWDataSet1.xsd</DependentUpon>
+      <DependentUpon>MyAlbumDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="NWDataSet.cs">
       <DependentUpon>NWDataSet.xsd</DependentUpon>
@@ -162,23 +165,23 @@
     <EmbeddedResource Include="5.FrmAdventureWorks2019.resx">
       <DependentUpon>5.FrmAdventureWorks2019.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="6.FrmMyAlbum_V1.resx">
-      <DependentUpon>6.FrmMyAlbum_V1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="7.FrmCustomers.resx">
       <DependentUpon>7.FrmCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="7.FrmLogon.resx">
       <DependentUpon>7.FrmLogon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="01.FrmMain.resx">
-      <DependentUpon>01.FrmMain.cs</DependentUpon>
+    <EmbeddedResource Include="01.FormMain.resx">
+      <DependentUpon>01.FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmImageFlags.resx">
       <DependentUpon>FrmImageFlags.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTreeView.resx">
-      <DependentUpon>FrmTreeView.cs</DependentUpon>
+    <EmbeddedResource Include="8.FrmTreeView.resx">
+      <DependentUpon>8.FrmTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.FrmMyAlbum2.resx">
+      <DependentUpon>6.FrmMyAlbum2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -200,16 +203,16 @@
     <None Include="ADDataSet1.xss">
       <DependentUpon>ADDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="MyHWDataSet1.xsc">
-      <DependentUpon>MyHWDataSet1.xsd</DependentUpon>
+    <None Include="MyAlbumDataSet1.xsc">
+      <DependentUpon>MyAlbumDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="MyHWDataSet1.xsd">
+    <None Include="MyAlbumDataSet1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MyHWDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>MyAlbumDataSet1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="MyHWDataSet1.xss">
-      <DependentUpon>MyHWDataSet1.xsd</DependentUpon>
+    <None Include="MyAlbumDataSet1.xss">
+      <DependentUpon>MyAlbumDataSet1.xsd</DependentUpon>
     </None>
     <None Include="NWDataSet.xsc">
       <DependentUpon>NWDataSet.xsd</DependentUpon>
@@ -236,15 +239,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MyDatabase1.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="MyDatabase1_log.ldf">
-      <DependentUpon>MyDatabase1.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 和 x64%29</ProductName>
@@ -255,6 +249,22 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MyAlbumDatabase1.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MyAlbumDatabase1_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>MyAlbumDatabase1.mdf</DependentUpon>
+    </Content>
+    <Content Include="MyMemberDatabase1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MyMemberDatabase1_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>MyMemberDatabase1.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

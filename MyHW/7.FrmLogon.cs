@@ -31,39 +31,39 @@ namespace MyHW
                 
                 if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(passWord) )
                 {
-                    MessageBox.Show("請輸入UserName或密碼");
+                    MessageBox.Show("請輸入UserName或Password");
                 }
                 else
                 {
-                    using(SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                    using(SqlConnection conn = new SqlConnection(Settings.Default.MyMemberConnection))
                     {
                         conn.Open();
 
                         SqlCommand command = new SqlCommand();
-                        command.CommandText = "selectPROC";
+                        command.CommandText = "PROClogin";
                         command.Connection = conn;
                         command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.Add("@UserName", SqlDbType.NVarChar, 16).Value = userName;
                         command.Parameters.Add("@Password", SqlDbType.NVarChar, 40).Value = passWord;
 
-                        //傳回值
-                        SqlParameter p1 = new SqlParameter();
-                        p1.ParameterName = "@Return_Value";
-                        p1.Direction = ParameterDirection.ReturnValue;
-                        command.Parameters.Add(p1);
+                        ////傳回值
+                        //SqlParameter p1 = new SqlParameter();
+                        //p1.ParameterName = "@Return_Value";
+                        //p1.Direction = ParameterDirection.ReturnValue;
+                        //command.Parameters.Add(p1);
 
                         SqlDataReader reader = command.ExecuteReader();
 
                         if(reader.HasRows)
                         {
-                            MessageBox.Show("登入成功，您的會員ID為：" + p1.Value);
-                            FrmMain fm = new FrmMain();
+                            MessageBox.Show("登入成功");
+                            FormMain fm = new FormMain();
                             //登入視窗藏起
                             this.Hide();
                             //強制回應main 如不強制回應主視窗會跑下一行直接關閉
                             fm.ShowDialog();
-                            //結束執行續
+                            //關掉fm後結束所有執行續
                             Application.ExitThread();
                         }
                         else
@@ -90,7 +90,7 @@ namespace MyHW
             //insert
             try
             {
-                using (SqlConnection conn = new SqlConnection(Settings.Default.NorthwindConnectionString))
+                using (SqlConnection conn = new SqlConnection(Settings.Default.MyMemberConnection))
                 {
                     string userName = UsernameTextBox.Text;
                     string passWord = PasswordTextBox.Text;

@@ -45,7 +45,6 @@ namespace MyHW
             this.orderByToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderAscToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderByDescToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupByToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -53,19 +52,19 @@ namespace MyHW
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(83, 56);
+            this.label1.Location = new System.Drawing.Point(124, 84);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 12);
+            this.label1.Size = new System.Drawing.Size(67, 18);
             this.label1.TabIndex = 5;
             this.label1.Text = "Country:";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(132, 54);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Location = new System.Drawing.Point(198, 81);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(145, 20);
+            this.comboBox1.Size = new System.Drawing.Size(216, 26);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -73,15 +72,13 @@ namespace MyHW
             // 
             this.listView1.HideSelection = false;
             this.listView1.LargeImageList = this.ImageList2;
-            this.listView1.Location = new System.Drawing.Point(38, 119);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2);
+            this.listView1.Location = new System.Drawing.Point(57, 178);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(631, 293);
+            this.listView1.Size = new System.Drawing.Size(944, 438);
             this.listView1.SmallImageList = this.ImageList1;
             this.listView1.TabIndex = 9;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
             // 
             // ImageList2
             // 
@@ -142,33 +139,33 @@ namespace MyHW
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.largIconToolStripMenuItem,
             this.smallIconToolStripMenuItem,
             this.detialsToolStripMenuItem,
-            this.orderByToolStripMenuItem,
-            this.groupByToolStripMenuItem});
+            this.orderByToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(130, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(241, 157);
             // 
             // largIconToolStripMenuItem
             // 
             this.largIconToolStripMenuItem.Name = "largIconToolStripMenuItem";
-            this.largIconToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.largIconToolStripMenuItem.Size = new System.Drawing.Size(240, 30);
             this.largIconToolStripMenuItem.Text = "LargIcon";
             this.largIconToolStripMenuItem.Click += new System.EventHandler(this.largIconToolStripMenuItem_Click);
             // 
             // smallIconToolStripMenuItem
             // 
             this.smallIconToolStripMenuItem.Name = "smallIconToolStripMenuItem";
-            this.smallIconToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.smallIconToolStripMenuItem.Size = new System.Drawing.Size(240, 30);
             this.smallIconToolStripMenuItem.Text = "SmallIcon";
             this.smallIconToolStripMenuItem.Click += new System.EventHandler(this.smallIconToolStripMenuItem_Click);
             // 
             // detialsToolStripMenuItem
             // 
             this.detialsToolStripMenuItem.Name = "detialsToolStripMenuItem";
-            this.detialsToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.detialsToolStripMenuItem.Size = new System.Drawing.Size(240, 30);
             this.detialsToolStripMenuItem.Text = "Detials";
             this.detialsToolStripMenuItem.Click += new System.EventHandler(this.detialsToolStripMenuItem_Click);
             // 
@@ -178,40 +175,32 @@ namespace MyHW
             this.orderAscToolStripMenuItem,
             this.orderByDescToolStripMenuItem});
             this.orderByToolStripMenuItem.Name = "orderByToolStripMenuItem";
-            this.orderByToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.orderByToolStripMenuItem.Size = new System.Drawing.Size(240, 30);
             this.orderByToolStripMenuItem.Text = "Order by";
             // 
             // orderAscToolStripMenuItem
             // 
             this.orderAscToolStripMenuItem.Name = "orderAscToolStripMenuItem";
-            this.orderAscToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.orderAscToolStripMenuItem.Size = new System.Drawing.Size(338, 34);
             this.orderAscToolStripMenuItem.Text = "Order CustomerID Asc";
             this.orderAscToolStripMenuItem.Click += new System.EventHandler(this.orderAscToolStripMenuItem_Click);
             // 
             // orderByDescToolStripMenuItem
             // 
             this.orderByDescToolStripMenuItem.Name = "orderByDescToolStripMenuItem";
-            this.orderByDescToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.orderByDescToolStripMenuItem.Size = new System.Drawing.Size(338, 34);
             this.orderByDescToolStripMenuItem.Text = "Order By CustomerID Desc";
             this.orderByDescToolStripMenuItem.Click += new System.EventHandler(this.orderByDescToolStripMenuItem_Click);
             // 
-            // groupByToolStripMenuItem
-            // 
-            this.groupByToolStripMenuItem.Name = "groupByToolStripMenuItem";
-            this.groupByToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
-            this.groupByToolStripMenuItem.Text = "Group by";
-            this.groupByToolStripMenuItem.Click += new System.EventHandler(this.groupByToolStripMenuItem_Click);
-            // 
             // FrmCustomers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 429);
+            this.ClientSize = new System.Drawing.Size(1029, 644);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCustomers";
             this.Text = "FrmCustomers";
             ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).EndInit();
@@ -234,7 +223,6 @@ namespace MyHW
         private System.Windows.Forms.ToolStripMenuItem smallIconToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detialsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem orderByToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem groupByToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem orderAscToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem orderByDescToolStripMenuItem;
     }

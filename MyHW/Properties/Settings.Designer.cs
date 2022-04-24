@@ -56,8 +56,8 @@ namespace MyHW.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MyDatabase1.m" +
-            "df;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MyAlbumDataba" +
+            "se1.mdf;Integrated Security=True")]
         public string MyDatabase1ConnectionString {
             get {
                 return ((string)(this["MyDatabase1ConnectionString"]));
@@ -71,6 +71,17 @@ namespace MyHW.Properties {
         public string forHomeWorkConnectionString {
             get {
                 return ((string)(this["forHomeWorkConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MyMemberDatab" +
+            "ase1.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string MyMemberConnection {
+            get {
+                return ((string)(this["MyMemberConnection"]));
             }
         }
     }
