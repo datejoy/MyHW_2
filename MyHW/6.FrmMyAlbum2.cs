@@ -150,18 +150,17 @@ namespace MyHW
         }
 
 
-        string cityname;
+
         //點集link出現圖片
         private void CityN_Click(object sender, EventArgs e)
         {
             LinkLabel link = sender as LinkLabel;
-            cityname = link.Text;
             this.flowLayoutPanel1.Controls.Clear();
             try
             {
                 using(SqlConnection conn = new SqlConnection(Settings.Default.MyDatabase1ConnectionString))
                 {
-                    SqlCommand comm = new SqlCommand($"Select CityPhoto from Photo where CityName='{link.Text}'", conn);
+                    SqlCommand comm = new SqlCommand($"Select * from Photo where CityName='{link.Text}'", conn);
                     conn.Open();
                     SqlDataReader reader = comm.ExecuteReader();
                     
@@ -172,6 +171,7 @@ namespace MyHW
                             PictureBox pic = new PictureBox();
 
                             picBoxProperty(pic);
+                            pic.Tag = reader["PhotoID"];
 
                             //二進位轉Image
                             byte[] bytes = (byte[])reader["CityPhoto"];
@@ -180,8 +180,7 @@ namespace MyHW
                             this.flowLayoutPanel1.Controls.Add(pic);
 
                             pic.Click += Pic_Click;
-                            //pic.MouseMove += Pic_MouseMove;
-                            //pic.MouseLeave += Pic_MouseLeave;
+
 
                         }
                     }
@@ -213,10 +212,43 @@ namespace MyHW
         //點圖片新增form
         private void Pic_Click(object sender, EventArgs e)
         {
+            PictureBox pic = sender as PictureBox;
             Form f = new Form();
             f.BackgroundImage = (sender as PictureBox).Image;
             f.BackgroundImageLayout = ImageLayout.Zoom;
-            f.Show();
+            
+            Label descrip = new Label();
+            descrip.Font = new Font("微軟正黑體", 14, FontStyle.Regular);
+            descrip.ForeColor = Color.Black;
+            descrip.Dock = DockStyle.Bottom;
+
+            try
+            {
+                using(SqlConnection conn = new SqlConnection(Settings.Default.MyDatabase1ConnectionString))
+                {
+                    SqlCommand comm = new SqlCommand($"select Description from Photo where PhotoID={pic.Tag}", conn);
+                    conn.Open();
+                    SqlDataReader reader = comm.ExecuteReader();
+                    if(reader.HasRows)
+                    {
+                        while(reader.Read())
+                        {
+                            //在form新增描述
+                            descrip.Text = reader["Description"].ToString();
+                            f.Text = descrip.Text;
+                        }
+                    }
+                    
+                    f.Controls.Add(descrip);
+                    f.Show();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
 
 

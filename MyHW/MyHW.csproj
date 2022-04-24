@@ -252,10 +252,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MyAlbumDatabase1.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="MyAlbumDatabase1_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>MyAlbumDatabase1.mdf</DependentUpon>
     </Content>
     <Content Include="MyMemberDatabase1.mdf">
