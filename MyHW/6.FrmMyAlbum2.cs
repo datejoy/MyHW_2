@@ -96,12 +96,12 @@ namespace MyHW
                 Image image = Image.FromFile(files[i]);
 
                 this.flowLayoutPanel2.Controls.Add(pic);
-                SaveNewPic();
+                SaveNewPic(image);
             }
         }
 
 
-        void SaveNewPic()
+        void SaveNewPic(Image image)
         {
 
             try
@@ -114,7 +114,8 @@ namespace MyHW
 
                     byte[] bytes;
                     System.IO.MemoryStream ms = new System.IO.MemoryStream();
-                 //   image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    
+                    image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                     bytes = ms.GetBuffer();
 
                     comm.Parameters.Add("@CityName", SqlDbType.NVarChar).Value = comboBox1.Text;
@@ -335,47 +336,57 @@ namespace MyHW
             }
 
         }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            phobindNavi();
+
+        }
+
+
+
+        #region 失敗卡住
+        ///* System.ComponentModel.*/
+        //ComponentResourceManager resources = new /*System.ComponentModel.*/ComponentResourceManager(typeof(FrmMyAlbum2));
+        //void toolstripSetting(ToolStrip ts)
+        //{  
+        //   // ts.Visible = true;
+        //    ts.Dock = DockStyle.Bottom;
+        //    ToolStripButton stripbtn1 = new ToolStripButton();
+        //    stripbtn1.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+        //    stripbtn1.Text = "上一張";
+        //    stripbtn1.Image = ((/*System.Drawing.*/Image)(resources.GetObject("stripbtn1.Image")));
+        //    stripbtn1.Visible = true;
+        //    ts.Items.Add(stripbtn1);
+        //    stripbtn1.Click += Stripbtn1_Click;
+
+        //    ToolStripButton stripbtn2 = new ToolStripButton();
+        //    stripbtn2.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
+        //    stripbtn2.Text = "下一張";
+        //    stripbtn2.Image = ((/*System.Drawing.*/Image)(resources.GetObject("stripbtn2.Image")));
+        //    stripbtn2.Visible = true;
+        //    ts.Items.Add(stripbtn2);
+        //    stripbtn2.Click += Stripbtn2_Click;
+
+        //}
+
+        ////下一張
+        //private void Stripbtn2_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+
+        ////上一張
+        //private void Stripbtn1_Click(object sender, EventArgs e)
+        //{
+        //    //※用tag?
+            
+        //}
+        #endregion 失敗卡住
+
     }
 
 
-    #region 失敗卡住
-    ///* System.ComponentModel.*/
-    //ComponentResourceManager resources = new /*System.ComponentModel.*/ComponentResourceManager(typeof(FrmMyAlbum2));
-    //void toolstripSetting(ToolStrip ts)
-    //{
-    //    // ts.Visible = true;
-    //    ts.Dock = DockStyle.Bottom;
-    //    ToolStripButton stripbtn1 = new ToolStripButton();
-    //    stripbtn1.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
-    //    stripbtn1.Text = "上一張";
-    //    stripbtn1.Image = ((/*System.Drawing.*/Image)(resources.GetObject("stripbtn1.Image")));
-    //    stripbtn1.Visible = true;
-    //    ts.Items.Add(stripbtn1);
-    //    stripbtn1.Click += Stripbtn1_Click;
-
-    //    ToolStripButton stripbtn2 = new ToolStripButton();
-    //    stripbtn2.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
-    //    stripbtn2.Text = "下一張";
-    //    stripbtn2.Image = ((/*System.Drawing.*/Image)(resources.GetObject("stripbtn2.Image")));
-    //    stripbtn2.Visible = true;
-    //    ts.Items.Add(stripbtn2);
-    //    stripbtn2.Click += Stripbtn2_Click;
-
-
-    //}
-
-    ////下一張
-    //private void Stripbtn2_Click(object sender, EventArgs e)
-    //{
-
-    //}
-
-
-    ////上一張
-    //private void Stripbtn1_Click(object sender, EventArgs e)
-    //{
-
-    //}
-    #endregion 失敗卡住
 }
 
