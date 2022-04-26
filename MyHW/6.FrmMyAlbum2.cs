@@ -38,7 +38,7 @@ namespace MyHW
         //load linklabel combobox
         void BornCity()
         {
-            this.cityTableAdapter.Fill(this.myAlbumDataSet1.City);
+           this.cityTableAdapter.Fill(this.myAlbumDataSet1.City);
             for (int i = 0; i < this.myAlbumDataSet1.City.Rows.Count; i++)
             {
                 //離線
@@ -258,6 +258,46 @@ namespace MyHW
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.photoTableAdapter.Fill(this.myAlbumDataSet1.Photo);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.flowLayoutPanel2.Controls.Clear();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Settings.Default.MyalbumDatabaseConnection))
+                {
+                    SqlCommand comm = new SqlCommand($"Select CityPhoto from Photo where CityName='{comboBox1.Text}'", conn);
+                    conn.Open();
+                    SqlDataReader reader = comm.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            PictureBox pic = new PictureBox();
+
+                            picBoxProperty(pic);
+                           // pic.Tag = reader["PhotoID"];
+
+                            //二進位轉Image
+                            byte[] bytes = (byte[])reader["CityPhoto"];
+                            System.IO.MemoryStream ms = new System.IO.MemoryStream(bytes);
+                            pic.Image = Image.FromStream(ms);
+                            this.flowLayoutPanel2.Controls.Add(pic);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("沒有照片");
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

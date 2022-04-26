@@ -20,8 +20,10 @@ namespace MyHW
         internal int layoutIndex;
         FrmMyAlbum2 frma2;
 
+
         private void FrmPic_Load(object sender, EventArgs e)
         {
+
             this.frma2 = (FrmMyAlbum2)Application.OpenForms["FrmMyAlbum2"]; //取得控制項Gets a collection of open forms owned by the application.
             this.pictureBox1.Image = ((PictureBox)frma2.flowLayoutPanel1.Controls[layoutIndex]).Image;
            //'FrmMyAlbum2.flowLayoutPanel1' 由於其保護層級之故，所以無法存取 
