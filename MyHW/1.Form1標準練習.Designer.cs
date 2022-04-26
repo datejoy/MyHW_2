@@ -190,7 +190,7 @@ namespace MyHW
             this.labSho.Location = new System.Drawing.Point(49, 468);
             this.labSho.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labSho.Name = "labSho";
-            this.labSho.Size = new System.Drawing.Size(85, 30);
+            this.labSho.Size = new System.Drawing.Size(57, 20);
             this.labSho.TabIndex = 24;
             this.labSho.Text = "結果：";
             // 
@@ -201,7 +201,7 @@ namespace MyHW
             this.labRes.Location = new System.Drawing.Point(32, 404);
             this.labRes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labRes.Name = "labRes";
-            this.labRes.Size = new System.Drawing.Size(159, 45);
+            this.labRes.Size = new System.Drawing.Size(107, 30);
             this.labRes.TabIndex = 23;
             this.labRes.Text = "Result：";
             // 
@@ -223,7 +223,7 @@ namespace MyHW
             this.txtBox1.Location = new System.Drawing.Point(142, 13);
             this.txtBox1.Margin = new System.Windows.Forms.Padding(4);
             this.txtBox1.Name = "txtBox1";
-            this.txtBox1.Size = new System.Drawing.Size(136, 39);
+            this.txtBox1.Size = new System.Drawing.Size(136, 29);
             this.txtBox1.TabIndex = 21;
             // 
             // labnum
@@ -233,7 +233,7 @@ namespace MyHW
             this.labnum.Location = new System.Drawing.Point(3, 13);
             this.labnum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labnum.Name = "labnum";
-            this.labnum.Size = new System.Drawing.Size(131, 30);
+            this.labnum.Size = new System.Drawing.Size(88, 20);
             this.labnum.TabIndex = 20;
             this.labnum.Text = "Number：";
             // 
@@ -306,7 +306,7 @@ namespace MyHW
             this.labSte.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labSte.Location = new System.Drawing.Point(266, 393);
             this.labSte.Name = "labSte";
-            this.labSte.Size = new System.Drawing.Size(71, 30);
+            this.labSte.Size = new System.Drawing.Size(47, 20);
             this.labSte.TabIndex = 112;
             this.labSte.Text = "Step:";
             // 
@@ -317,7 +317,7 @@ namespace MyHW
             this.labTo.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labTo.Location = new System.Drawing.Point(294, 338);
             this.labTo.Name = "labTo";
-            this.labTo.Size = new System.Drawing.Size(43, 30);
+            this.labTo.Size = new System.Drawing.Size(29, 20);
             this.labTo.TabIndex = 111;
             this.labTo.Text = "to:";
             // 
@@ -328,7 +328,7 @@ namespace MyHW
             this.labFrom.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labFrom.Location = new System.Drawing.Point(264, 289);
             this.labFrom.Name = "labFrom";
-            this.labFrom.Size = new System.Drawing.Size(73, 30);
+            this.labFrom.Size = new System.Drawing.Size(49, 20);
             this.labFrom.TabIndex = 110;
             this.labFrom.Text = "from:";
             // 
@@ -339,7 +339,7 @@ namespace MyHW
             this.txtBox4.Location = new System.Drawing.Point(343, 387);
             this.txtBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBox4.Name = "txtBox4";
-            this.txtBox4.Size = new System.Drawing.Size(62, 39);
+            this.txtBox4.Size = new System.Drawing.Size(62, 29);
             this.txtBox4.TabIndex = 109;
             // 
             // txtBox3
@@ -349,7 +349,7 @@ namespace MyHW
             this.txtBox3.Location = new System.Drawing.Point(343, 334);
             this.txtBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBox3.Name = "txtBox3";
-            this.txtBox3.Size = new System.Drawing.Size(62, 39);
+            this.txtBox3.Size = new System.Drawing.Size(62, 29);
             this.txtBox3.TabIndex = 108;
             // 
             // txtBox2
@@ -359,7 +359,7 @@ namespace MyHW
             this.txtBox2.Location = new System.Drawing.Point(343, 282);
             this.txtBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBox2.Name = "txtBox2";
-            this.txtBox2.Size = new System.Drawing.Size(62, 39);
+            this.txtBox2.Size = new System.Drawing.Size(62, 29);
             this.txtBox2.TabIndex = 107;
             // 
             // btn13
@@ -402,7 +402,7 @@ namespace MyHW
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1173, 1009);
+            this.ClientSize = new System.Drawing.Size(1173, 538);
             this.Controls.Add(this.btn15);
             this.Controls.Add(this.btn14);
             this.Controls.Add(this.btn13);
